@@ -5,32 +5,32 @@ import FileBase64 from 'react-file-base64';
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
 
 
-const InsectId = () => {
-   const [insectFile, setInsectFile] = useState(null);
+const PlantId = () => {
+   const [plantFile, setPlantFile] = useState(null);
 
    const handleInput = (files) => {
-    setInsectFile(files);
+    setPlantFile(files);
    };
 
 const setPicIdData = () => {
     const data = {
-        api_key: "cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd",
-        images: [insectFile.base64.slice(23)],
-        modifiers:"similar_images",
-        language: "en",
-        details: ["common_names","taxonomy","url"  ],
+        api_key: "z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP",
+        images: [plantFile.base64.slice(23)],
+        modifiers:["crops_fast","similar_images"],
+        plant_language: "en",
+        plant_details: ["common_names","taxonomy","url"  ],
     };
 
-    fetch('https://insect.mlapi.ai/api/v1/identification', {
+    fetch('https://api.plant.id/v2/identify', {
         method: 'POST' ,
-        mode: 'no-cors',
+    
         headers: {
             'Content-Type': 'application/json', },
             body: JSON.stringify(data),
         })
         .then(response => response.json())
         .then(responseData => {
-            console.log ('Success', responseData);
+            console.log ('Your Plant Has Been Analyzed! ', responseData);
         })
     }
 
@@ -38,7 +38,7 @@ const setPicIdData = () => {
    
     return(
         <div>
-            Insect ID 
+            Plant ID  
             <FileBase64 
             multiple={false}
             onDone={handleInput}
@@ -50,4 +50,4 @@ const setPicIdData = () => {
     )
 }
 
-export default InsectId;
+export default PlantId;
