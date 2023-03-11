@@ -5,10 +5,13 @@ import PlantId from "./PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import PlantHealth from './PlantHealth';
 
 function App() {
   return (
     <div className="App">
+<PlantId /> 
+<PlantHealth />
       <PlantId />
       <BrowserRouter>
         <Routes>
@@ -20,7 +23,7 @@ function App() {
         <Routes>
           <Route path="register" element={<Register />} />
         </Routes>
-      </BrowserRouter>
+</ BrowserRouter>
     </div>
   );
 }
