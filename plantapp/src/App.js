@@ -1,6 +1,7 @@
-import './App.css';
+import './index.css';
 import React from 'react';
 import PlantId from './PlantID';
+
 
 
 
@@ -8,7 +9,7 @@ import PlantId from './PlantID';
 function App() {
   return (
     <div className="App">
-<PlantId /> 
+      <PlantId /> 
     </div>
   );
 }

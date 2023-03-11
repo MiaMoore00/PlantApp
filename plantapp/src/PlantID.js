@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
+import SearchBar from './Components/SearchBar';
+import './index.css';
 
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
@@ -37,6 +39,8 @@ const setPicIdData = () => {
 
    
     return(
+    <>
+        <SearchBar placeholder="Search for a Plant or Insect..." data ={setPicIdData}/>
         <div>
             Plant ID  
             <FileBase64 
@@ -47,6 +51,7 @@ const setPicIdData = () => {
             <button onClick={setPicIdData}>click me </button>
           
         </div>
+    </>
     )
 }
 
