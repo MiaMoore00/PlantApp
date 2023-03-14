@@ -5,6 +5,7 @@ import PlantId from "./PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Favorites from "./pages/Favorites";
 import PlantHealth from './PlantHealth';
 import InsectId from "./InsectID";
 
@@ -28,6 +29,10 @@ function App() {
         <Routes>
           <Route path="register" element={<Register />} />
         </Routes>
+        <Routes>
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </BrowserRouter>
 </ BrowserRouter>
     </div>
   );
