@@ -7,17 +7,22 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Favorites from "./pages/Favorites";
 import PlantHealth from './PlantHealth';
+import InsectId from "./InsectID";
+
 
 function App() {
   return (
     <div className="App">
-<PlantId /> 
-<PlantHealth />
-      <PlantId />
+
+  
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+
+  <PlantId /> 
+<PlantHealth />
+<InsectId />
         <Routes>
           <Route path="login" element={<Login />} />
         </Routes>
