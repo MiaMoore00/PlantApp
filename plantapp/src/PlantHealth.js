@@ -44,7 +44,7 @@ const setPicIdData = () => {
             onDone={handleInput}
             />
              
-            <button onClick={setPicIdData}>click me </button>
+            <button onClick={setPicIdData}>Is My Plant Healthy? </button>
           
         </div>
     )
