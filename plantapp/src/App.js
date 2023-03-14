@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import React from "react";
 import PlantId from "./PlantID";
@@ -10,31 +10,24 @@ import PlantHealth from './PlantHealth';
 import InsectId from "./InsectID";
 
 
-function App() {
-  return (
+const  App=() =>{
+return (
+  <>
+  <Router>
     <div className="App">
-
-  
-      <BrowserRouter>
+  <Router>
+    <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="PlantHealth" element={<PlantHealth />} />
+          <Route path="PlantID" element={<PlantId />} />
         </Routes>
 
-  <PlantId /> 
-<PlantHealth />
-<InsectId />
-        <Routes>
-          <Route path="login" element={<Login />} />
-        </Routes>
-        <Routes>
-          <Route path="register" element={<Register />} />
-        </Routes>
-        <Routes>
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-      </BrowserRouter>
-</ BrowserRouter>
     </div>
+    </ Router>
+    </>
   );
 }
 
