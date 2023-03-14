@@ -1,9 +1,20 @@
 import React from 'react';
-import './Home.css'
+import SearchBar from '../components/SearchBar';
+
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>Home
+      <SearchBar  />
+
+     
+    <h1 className="text-3xl font-bold underline text-green-700">
+      Super Duper Plant App  !
+    </h1>
+  
+
+
+    </div>
   )
 }
 

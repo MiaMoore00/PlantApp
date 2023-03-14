@@ -5,11 +5,16 @@ import PlantId from "./PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Favorites from "./pages/Favorites";
 import PlantHealth from './PlantHealth';
+import InsectId from "./InsectID";
+
 
 const  App=() =>{
 return (
   <>
+  <Router>
+    <div className="App">
   <Router>
     <div className="App">
         <Routes>
