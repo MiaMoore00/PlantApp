@@ -33,7 +33,6 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </BrowserRouter>
-</ BrowserRouter>
     </div>
   );
 }
