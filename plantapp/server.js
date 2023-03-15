@@ -8,9 +8,12 @@ const sequelize = new Sequelize(
 );
 
 const app = express();
-const PORT = 3001;
+const PORT = 3012;
 
+app.use(cors());
+app.use(express.json());
+app.set("view engine", "ejs");
 
-app.listen(3001, () => {
+app.listen(3012, () => {
   console.log(`Plant app server listening on port ${PORT}!`);
 });
