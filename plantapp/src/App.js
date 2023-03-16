@@ -24,7 +24,10 @@ return (
           <Route path="PlantHealth" element={<PlantHealth />} />
           <Route path="PlantID" element={<PlantId />} />
         </Routes>
-
+        <Routes>
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </BrowserRouter>
     </div>
     </ Router>
     </>
