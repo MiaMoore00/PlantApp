@@ -10,6 +10,7 @@ import PlantHealth from './PlantHealth';
 import InsectId from "./InsectID";
 
 
+
 const  App=() =>{
 return (
 <>
@@ -25,11 +26,9 @@ return (
         <Routes>
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
-      </BrowserRouter>
     </div>
     </ Router>
     </>
   );
 }
-
 export default App;
