@@ -14,10 +14,19 @@ app.use(cors());
 app.use(express.json());
 app.set("view engine", "ejs");
 
-app.post("/register", (req, res) => {
-    User.create(req.body.userName)
-      .then((userName) => res.json(userName))
+app.post("/register", async (req, res) => {
+    await User.create({
+        userName: req.body.userName,
+        email: req.body.email,
+    })
+    let newUser = await User.findAll({
+        where: {
+            userName: req.body.userName,
+            email: req.body.email,
+        }
+    })
       .catch((err) => res.status(400).json(err));
+      res.send(newUser)
   });
 
 app.listen(3001, () => {
