@@ -7,6 +7,9 @@ import FileBase64 from 'react-file-base64';
 
 const PlantHealth = () => {
    const [plantFile, setPlantFile] = useState(null);
+   const [plantHealth, setPlantHealth] =useState(null);
+  const [plantDiseases, setPlantDiseases] = useState(null);
+ 
 
    const handleInput = (files) => {
     setPlantFile(files);
@@ -18,7 +21,7 @@ const setPicIdData = () => {
         images: [plantFile.base64.slice(23)],
         modifiers:["similar_images"],
         plant_language: "en",
-        plant_details: ["description", "treatment" ],
+        plant_details: ["description", "treatment"],
     };
 
     fetch('https://api.plant.id/v2/health_assessment', {
@@ -31,6 +34,11 @@ const setPicIdData = () => {
         .then(response => response.json())
         .then(responseData => {
             console.log ('Your Plant Has Been Analyzed! ', responseData);
+            const isHealthy = responseData.health_assessment.is_healthy
+        setPlantHealth(isHealthy);
+        const diseases = responseData.health_assessment.diseases
+        setPlantDiseases(diseases);     
+         
         })
     }
 
@@ -38,14 +46,26 @@ const setPicIdData = () => {
    
     return(
         <div>
-            Plant Health
+            <div className="title">
+            <h1>Get your plants' health Here</h1>
+            <h2>Just upload a picture of your plant below</h2>
+            </div>
+            <div className="upload">
             <FileBase64 
             multiple={false}
             onDone={handleInput}
             />
              
             <button onClick={setPicIdData}>Is My Plant Healthy? </button>
-          
+            </div>
+
+            <p> {plantHealth!==null?plantHealth?"true":"false":null}</p>
+            {/* if the thing is null then we are saying don't show anything */}
+            <ul>{plantDiseases?.map((disease) =>  {
+               return <li key={disease.entity_id}>Potential issue:{disease.name}</li>
+            })}</ul>
+
+
         </div>
     )
 }

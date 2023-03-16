@@ -12,9 +12,7 @@ import InsectId from "./InsectID";
 
 const  App=() =>{
 return (
-  <>
-  <Router>
-    <div className="App">
+<>
   <Router>
     <div className="App">
         <Routes>
