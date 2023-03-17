@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Favorites from "./pages/Favorites";
 import PlantHealth from './PlantHealth';
-import InsectId from "./InsectID";
+
 
 
 
@@ -22,6 +22,7 @@ return (
           <Route path="register" element={<Register />} />
           <Route path="PlantHealth" element={<PlantHealth />} />
           <Route path="PlantID" element={<PlantId />} />
+          
         </Routes>
         <Routes>
           <Route path="/favorites" element={<Favorites />} />
