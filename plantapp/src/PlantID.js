@@ -18,7 +18,12 @@ const setPicIdData = () => {
         images: [plantFile.base64.slice(23)],
         modifiers:["crops_fast","similar_images"],
         plant_language: "en",
-        plant_details: ["common_names","taxonomy","url"  ],
+        plant_details: ["common_names",
+        "url",
+        "name_authority",
+        "wiki_description",
+        "taxonomy",
+        "synonyms" ],
     };
 
     fetch('https://api.plant.id/v2/identify', {
