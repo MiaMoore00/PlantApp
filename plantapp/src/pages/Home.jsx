@@ -1,18 +1,21 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../Components/SearchBar';
 import './Home.css'
 import { Link } from "react-router-dom";
 
 
+
 function Home() {
   return (
-    <div>Home
-      <SearchBar />
-
-
-      <h1 className="text-3xl font-bold underline text-green-700">
-        Super Duper Plant App  !
+    <>
+    <div className="fixed z-20 flex w-full items-center">
+      <img className='w-full'src="/images/hangin-leaves.png" alt="" />
+    </div>
+    <div>
+      <h1 className="text-3xl py-5 font-bold underline text-green-700">
+        Super Duper Plant App!
       </h1>
+      <SearchBar placeholder={'Search for your favorite plants!'}/>
       <p><Link to="/PlantHealth"><button>
         Assess your plant health
       </button>
@@ -24,6 +27,7 @@ function Home() {
       </Link>
       </p>
     </div>
+    </>
   )
 }
 
