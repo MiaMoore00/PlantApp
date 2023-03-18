@@ -15,13 +15,14 @@ function App() {
 
   
       <BrowserRouter>
-        <Routes>
+        <Routes >
           <Route path="/" element={<Home />} />
+          
         </Routes>
 
-  <PlantId /> 
-<PlantHealth />
-<InsectId />
+        <PlantId /> 
+          <PlantHealth />
+          <InsectId />
         <Routes>
           <Route path="login" element={<Login />} />
         </Routes>

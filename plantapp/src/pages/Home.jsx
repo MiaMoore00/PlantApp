@@ -1,20 +1,22 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../Components/SearchBar.jsx';
+
 
 
 function Home() {
   return (
-    <div>Home
-      <SearchBar  />
+  
+    <div >
+      <h1 className="text-3xl py-5 font-black underline text-green-700">
+      Super Duper Plant App!
+      </h1>
+      <SearchBar placeholder="Search for a Plant or Insect..." />
 
      
-    <h1 className="text-3xl font-bold underline text-green-700">
-      Super Duper Plant App  !
-    </h1>
-  
 
 
     </div>
+    
   )
 }
 
