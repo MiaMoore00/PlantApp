@@ -56,7 +56,9 @@ const setPicIdData = () => {
             <p> {plantHealth!==null?plantHealth?"true":"false":null}</p>
             {/* if the thing is null then we are saying don't show anything */}
             <ul>{plantDiseases?.map((disease) =>  {
-               return <li key={disease.entity_id}><b>Potential issue:</b>{disease.name} <b>| Treatment Plan Options:</b>{disease.disease_details.treatment.biological} <button href={disease.disease_details.url}>Click here for more info</button></li>
+               return <li key={disease.entity_id}><b>Potential issue:</b>{disease.name} <b>| Treatment Plan Options:</b>{disease.disease_details.treatment.biological} 
+               <b><a src={disease.disease_details.url}>Click here for more info</a></b>
+               </li>
             })}</ul>
 
         </div>

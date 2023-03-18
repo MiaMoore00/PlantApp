@@ -7,6 +7,7 @@ import FileBase64 from 'react-file-base64';
 
 const PlantId = () => {
    const [plantFile, setPlantFile] = useState(null);
+   const [plantInfo, setPlantInfo] = useState(null);
 
    const handleInput = (files) => {
     setPlantFile(files);
@@ -36,6 +37,8 @@ const setPicIdData = () => {
         .then(response => response.json())
         .then(responseData => {
             console.log ('Your Plant Has Been Analyzed! ', responseData);
+            const plantInfoArray = responseData.suggestions
+            setPlantInfo(plantInfoArray);
         })
     }
 
@@ -50,7 +53,18 @@ const setPicIdData = () => {
             />
              
             <button onClick={setPicIdData}>Analyze Plant </button>
-          
+            
+          <ul>{plantInfo?.map((plantArray) => {
+            return <li key={plantArray.id}>
+               <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
+               <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
+               <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
+               <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
+                {/* I need to put a condition if null... */}
+            </li>
+          })}
+
+          </ul>
         </div>
     )
 }
