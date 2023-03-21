@@ -32,5 +32,5 @@ app.post("/api/register", async (req, res) => {
 
 
 app.listen(3001, () => {
-  console.log(`Plant app server listening on port ${PORT}!`);
+  console.log(`App server listening on port ${PORT}!`);
 });
