@@ -14,7 +14,8 @@ app.use(cors());
 app.use(express.json());
 app.set("view engine", "ejs");
 
-app.post("/register", async (req, res) => {
+
+app.post("/api/register", async (req, res) => {
     await User.create({
         userName: req.body.userName,
         email: req.body.email,
@@ -28,6 +29,7 @@ app.post("/register", async (req, res) => {
       .catch((err) => res.status(400).json(err));
       res.send(newUser)
   });
+
 
 app.listen(3001, () => {
   console.log(`Plant app server listening on port ${PORT}!`);
