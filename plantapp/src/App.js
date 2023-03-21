@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import "./App.css";
-import React from "react";
+import React  from "react";
 import PlantId from "./PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -11,11 +11,30 @@ import PlantHealth from './PlantHealth';
 
 
 
+ 
 const  App=() =>{
 return (
 <>
   <Router>
     <div className="App">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
@@ -29,6 +48,9 @@ return (
         </Routes>
     </div>
     </ Router>
+
+
+    
     </>
   );
 }

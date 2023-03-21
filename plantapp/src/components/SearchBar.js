@@ -6,18 +6,8 @@ const [query, setQuery] = useState("");
 const searchPlants = () => {
     const urlEncodedSearchString = encodeURIComponent(query);
 
-   
-
-    const options = {
-        method: 'GET',
-        headers: {
-            Authorization: 'GKZOHNZj0xP65kk0BAE2Tl9LGagm0pfD3DFNxAEEZcMQBhRZVDco8vbNJdnwwCo0',
-            'X-RapidAPI-Key': '55ca4bc0cemshd3f8ab971b7d929p15055djsnf4620756956d',
-            'X-RapidAPI-Host': 'plants2.p.rapidapi.com'
-        }
-    };
     
-    fetch(`https://plants2.p.rapidapi.com/api/plants?CN=${urlEncodedSearchString}`, options)
+    fetch(`https://perenual.com/api/species-list?key=sk-str46418c1cb5ac8e266&q=${urlEncodedSearchString}`,)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
