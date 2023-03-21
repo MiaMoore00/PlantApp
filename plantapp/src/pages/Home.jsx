@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from '../Components/SearchBar';
+import SearchBar from '../components/SearchBar';
 import './Home.css'
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ function Home() {
       <h1 className="text-3xl py-5 font-bold underline text-green-700">
         Super Duper Plant App!
       </h1>
-      <SearchBar placeholder={'Search for your favorite plants!'}/>
+      
       <p><Link to="/PlantHealth"><button>
         Assess your plant health
       </button>
@@ -26,6 +26,7 @@ function Home() {
       </button>
       </Link>
       </p>
+      <SearchBar placeholder={'Search for your favorite plants!'}/>
     </div>
     </>
   )
