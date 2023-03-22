@@ -8,22 +8,42 @@ const Register = () => {
   const [emailReg, setEmailReg] = useState("");
 
   const registerData = (value) => {
-    console.log(value.username.value)
-    axios.post("/api/register", {
+    const body = {
       username: value.username.value,
       email: value.email.value,
-    }).then((response) => {
-      console.log(response);
-    });
+    };
+    const replacer = (key, value) => {
+      if (typeof value === "object" && value !== null) {
+        const seen = new WeakSet();
+        if (seen.has(value)) {
+          return;
+        }
+        seen.add(value);
+      }
+      return value;
+    };
+    axios
+      .post("api/register", JSON.parse(JSON.stringify(body, replacer)), {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
     <div className="auth">
       <h1>Sign up</h1>
-      <form onSubmit={(e) => {
-        console.log(e)
-            e.preventDefault();registerData(e.target);
-        }}>
+      <form
+        onSubmit={(e) => {
+          console.log(e);
+          e.preventDefault();
+          registerData(e.target);
+        }}
+      >
         <input name="username" required type="text" placeholder="Username" />
         <input
           type="text"
@@ -32,7 +52,8 @@ const Register = () => {
           }}
           placeholder="Full name"
         />
-        <input name="email"
+        <input
+          name="email"
           onChange={(e) => {
             setEmailReg(e.target.value);
           }}
@@ -41,8 +62,7 @@ const Register = () => {
           placeholder="Email"
         />
         <input required type="password" placeholder="Password" />
-        <button type="submit">
-        Sign up</button>
+        <button type="submit">Sign up</button>
         <p>The email or password you enter is not valid!</p>
         <span>
           Already have an account? <Link to="/login">Login!</Link>
