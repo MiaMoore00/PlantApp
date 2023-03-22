@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
 const Register = () => {
   const [usernameReg, setUsenameReg] = useState("");
   const [emailReg, setEmailReg] = useState("");
+  const navigate = useNavigate();
 
   const registerData = (value) => {
     const body = {
@@ -28,6 +29,7 @@ const Register = () => {
       })
       .then((response) => {
         console.log(response);
+        navigate("/"); // navigate to Home Screen after successful registration
       })
       .catch((error) => {
         console.log(error);
@@ -39,7 +41,6 @@ const Register = () => {
       <h1>Sign up</h1>
       <form
         onSubmit={(e) => {
-          console.log(e);
           e.preventDefault();
           registerData(e.target);
         }}
