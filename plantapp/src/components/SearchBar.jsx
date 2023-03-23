@@ -24,12 +24,12 @@ const [data,setData] = useState()
         if(!data) return null
         return data.map((plant)=>
 
-    {return  <p key={plant.id}> <b>Common Name:</b>{plant.common_name} 
+    {return( <div> <p key={plant.id}> <b>Common Name:</b>{plant.common_name} 
      <b>Other Name:</b>{plant.other_name}
      <b>Sunlight:</b> {plant.sunlight}<b> Scientific Name:</b>{plant.scientific_name} <b>Watering:</b> {plant.watering}
     </p>
-    //<img src={plant.default_image.medium_url} ></img>
-     // when I try to render image page goes blank 
+    {plant.default_image?<img src={plant.default_image.medium_url} ></img>:null}
+     </div>)// when I try to render image page goes blank 
     })
     },[data])
 
