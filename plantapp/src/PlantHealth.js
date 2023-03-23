@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
+import './App.css'
+import { Link } from "react-router-dom";
+
+
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
 
@@ -41,17 +45,34 @@ const setPicIdData = () => {
         })
     }
     return(
-        <div>
-            <div className="title">
-            <h1>Get your plants' health Here</h1>
-            <h2>Just upload a picture of your plant below</h2>
+        <>
+        <div className='bg-white font-black pt-3 flex pl-5'>
+        <p><Link to="/PlantID" className='text-[#3f6212] '><button>
+        Identify Your Plant
+      </button>
+      </Link>
+      </p>
+        </div>
+        <div className='body'>
+            <div className='font-black bg-white py-5'>
+            <h1 className='text-3xl text-[#3f6212]'>Get your Plant's Health Here!</h1>
+            <h2>Upload a picture of your plant below</h2>
             </div>
-            <div className="upload">
+            <div className='plantBackground h-56 w-screen bg-cover brightness-75 border-solid border-y-4 border-y-current'>
+            </div>
+            <div className="upload py-5">
             <FileBase64
             multiple={false}
             onDone={handleInput}
             />
-            <button onClick={setPicIdData}>Is My Plant Healthy? </button>
+            </div>
+            <div>
+            <button 
+            onClick={setPicIdData}
+            className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer border border-solid border-black align-top"
+            >
+                Click here for a Health Assessment of your Plant! 
+            </button>
             </div>
             <p> {plantHealth!==null?plantHealth?"true":"false":null}</p>
             {/* if the thing is null then we are saying don't show anything */}
@@ -62,6 +83,7 @@ const setPicIdData = () => {
             })}</ul>
 
         </div>
+        </>
     )
 }
 export default PlantHealth;
