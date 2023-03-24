@@ -41,3 +41,23 @@ body {
   background-color: rgb(152, 182, 152);
   
 }
+
+
+.body{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.plantBackground{
+    background-image: url('../public/images/plantBackground.jpg');
+}
+
+.upload input[type="file" i]::-webkit-file-upload-button{
+  background-color:rgb(102, 144, 104);
+  width: 6rem;
+  height: 3rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: solid 1px ;
+ 
+}
+
