@@ -4,13 +4,27 @@ import "./Forms.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Perform login authentication check here
-    navigate("/");
+    try {
+      const response = await fetch("http://localhost:3001/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userName: username }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        navigate("/");
+      } else {
+        // Display error message to user
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -36,8 +50,6 @@ const Login = () => {
                   type="password"
                   placeholder="Password"
                   className="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="form-link">
@@ -48,7 +60,7 @@ const Login = () => {
               <div className="field button-field">
                 <button type="submit">Login</button>
               </div>
-              <p>The email or password you entered is not valid!</p>
+              {/* <p>The Username or password you entered is not valid!</p> */}
             </form>
 
             <div className="form-link">

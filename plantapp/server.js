@@ -32,6 +32,23 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
+app.post("/api/login", async (req, res) => {
+  try {
+    const { userName } = req.body;
+    const user = await User.findOne({
+      where: { userName },
+    });
+    if (user) {
+      res.send({ message: "Login successful!" });
+    } else {
+      res.status(401).send({ message: "Invalid username" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+});
+
 try {
   app.listen(PORT, () => {
     console.log(`Plant server listening on port ${PORT}!`);
