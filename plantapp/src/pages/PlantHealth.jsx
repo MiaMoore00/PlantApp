@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-import './App.css'
+
 import { Link } from "react-router-dom";
+import SearchBar from '../Components/SearchBar';
 
 
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
@@ -46,19 +47,26 @@ const setPicIdData = () => {
     }
     return(
         <>
-        <div className='bg-white font-black pt-3 flex pl-5'>
-        <p><Link to="/PlantID" className='text-[#3f6212] '><button>
-        Identify Your Plant
+
+        
+        <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+        <p><Link to="/PlantID" className='p-2  rounded-md text-yellow-500 '><button>
+        <b>Identify Your Plant</b>
       </button>
       </Link>
-      </p>
-        </div>
+      
+      <Link to="/">
+        <button className='p-2  rounded-md text-yellow-500 '>
+        <b> Home </b>
+      </button>
+      </Link></p>
+
         <div className='body'>
-            <div className='font-black bg-white py-5'>
+            
             <h1 className='text-3xl text-[#3f6212]'>Get your Plant's Health Here!</h1>
             <h2>Upload a picture of your plant below</h2>
             </div>
-            <div className='plantBackground h-56 w-screen bg-cover brightness-75 border-solid border-y-4 border-y-current'>
+            <div className=''>
             </div>
             <div className="upload py-5">
             <FileBase64
@@ -73,7 +81,7 @@ const setPicIdData = () => {
             >
                 Click here for a Health Assessment of your Plant! 
             </button>
-            </div>
+            
             <p> {plantHealth!==null?plantHealth?"true":"false":null}</p>
             {/* if the thing is null then we are saying don't show anything */}
             <ul>{plantDiseases?.map((disease) =>  {
@@ -81,8 +89,8 @@ const setPicIdData = () => {
                <b><a src={disease.disease_details.url}>Click here for more info</a></b>
                </li>
             })}</ul>
-
-        </div>
+<SearchBar>      </SearchBar>
+    </div></div>
         </>
     )
 }

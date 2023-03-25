@@ -1,7 +1,9 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useMemo,} from "react";
+import {Card } from "reactstrap"
+
 
 export default function SearchBar({ placeholder })  {
-    
+ 
 const [query, setQuery] = useState("");
 console.log(query)
 
@@ -19,25 +21,44 @@ const [data,setData] = useState()
        
         })
     } 
-    
+
     const plantData= useMemo(()=>{
-        if(!data) return null
+        if(!data) return 
         return data.map((plant)=>
 
-    {return( <div> <p key={plant.id}> <b>Common Name:</b>{plant.common_name} 
-     <b>Other Name:</b>{plant.other_name}
-     <b>Sunlight:</b> {plant.sunlight}<b> Scientific Name:</b>{plant.scientific_name} <b>Watering:</b> {plant.watering}
-    </p>
-    {plant.default_image?<img src={plant.default_image.medium_url} ></img>:null}
-     </div>)// when I try to render image page goes blank 
+    {return( 
+
+<div className =  "flex flex-row justify-start mt-8">
+
+ 
+        <Card>
+ <div key={plant.id}> {plant.default_image?<img src={plant.default_image.medium_url} alt="plant"></img>:null} 
+    
+    <p> 
+    <span><b> Common Name: </b>{plant.common_name} </span>
+    <span><b> Sunlight: </b> {plant.sunlight}</span>
+     <span><b> Scientific Name: </b>{plant.scientific_name} </span>
+     <span><b> Watering: </b> {plant.watering}</span> 
+    </p> </div>
+ 
+    </Card> </div>
+
+
+ )  
     })
     },[data])
 
+    
+
+
+
+
+
+
+
 
 useEffect(() => {
-    searchPlants()
-
-}, []);
+    searchPlants()  }, []);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -50,8 +71,9 @@ useEffect(() => {
 
 
     return(
-        <div className='pb-5 max-w-md mx-auto'>
-        <div className="relative flex items-center  h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+        
+        <div className='pb-5 '>
+        <div className="relative flex items-center  h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden ">
             <div className=" text-gray-300">
                  <button onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +83,7 @@ useEffect(() => {
             </div>
     
             <input className="peer sans-serif h-full w-full outline-none text-md text-gray-700 pr-2"
-            type="text"
+            type="search"
             onChange={handleChange}
             placeholder={placeholder}
             value={query} 
@@ -72,15 +94,11 @@ useEffect(() => {
         
            
         
-            <div>
-            
+           
+        <div class="py-8  columns-2 ...">
 
-               {plantData}
- 
-
-
+               {plantData} 
     </div>
-    
 
     </div>
     )
