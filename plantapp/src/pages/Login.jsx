@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Forms.css";
 
-const Login = () => {
+const Login = ({setUserId}) => {
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
@@ -18,6 +18,8 @@ const Login = () => {
       });
       const data = await response.json();
       if (response.ok) {
+        console.log(data);
+        setUserId(data.userId)
         navigate("/");
       } else {
         // Display error message to user

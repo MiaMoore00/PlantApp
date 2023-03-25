@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import React from "react";
+import {React, useState} from "react";
 import PlantId from "./PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -12,13 +12,15 @@ import PlantHealth from './PlantHealth';
 
 
 const  App=() =>{
+  const [userId, setUserId] = useState(null);
+  console.log(userId);
 return (
 <>
   <Router>
     <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/" element={<Home userId={userId} />} />
+          <Route path="login" element={<Login setUserId={setUserId} />} />
           <Route path="register" element={<Register />} />
           <Route path="PlantHealth" element={<PlantHealth />} />
           <Route path="PlantID" element={<PlantId />} />

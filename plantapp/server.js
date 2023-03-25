@@ -39,7 +39,8 @@ app.post("/api/login", async (req, res) => {
       where: { userName },
     });
     if (user) {
-      res.send({ message: "Login successful!" });
+      console.log(user.dataValues.id);
+      res.send({ message: "Login successful!", userId: user.dataValues.id});
     } else {
       res.status(401).send({ message: "Invalid username" });
     }
@@ -49,10 +50,41 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-try {
-  app.listen(PORT, () => {
-    console.log(`Plant server listening on port ${PORT}!`);
-  });
-} catch (error) {
-  console.log(error);
-}
+app.put("/api/favorites", async (req,res) => {
+  try {
+    const {userId, favorites} = req.body;
+    console.log(req.body)
+    User.update({
+      favorite: favorites
+    },
+    {
+      where:{
+        id: userId
+      }
+    })
+    res.json("added to favorites")
+  }
+  catch (error){
+    console.log(error);
+  }
+})
+
+app.listen(PORT, async () => {
+  console.log(`Listening on port ${PORT}`);
+  try {
+    console.log("Connection has been established successfully.");
+  } catch (error) {
+    console.log("Unable to connect to the database:", error);
+  }
+});
+
+// below is what daneen had previously, but we were having issues running the code with this format. So we changed it to the above and 
+// get no errors listening to port :)
+
+// try {
+//   app.listen(PORT, () => {
+//     console.log(`Plant server listening on port ${PORT}!`);
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
