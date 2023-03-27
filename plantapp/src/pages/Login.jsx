@@ -35,7 +35,7 @@ const Login = () => {
                <div className="field button-field">
                    <button>Login</button>
                </div>
-               <p>The email or password you entered is not valid!</p>
+               {/* <p>The email or password you entered is not valid!</p> */}
            </form>
 
            <div className="form-link">

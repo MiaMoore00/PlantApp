@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from '../Components/SearchBar';
 import './Home.css'
 import { Link } from "react-router-dom";
+import Footer from '../Components/Footer';
 
 
 
@@ -26,8 +27,8 @@ function Home() {
       </p>
       <div>
       <SearchBar className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
-
-</div>
+      <Footer/>
+  </div>
         </div>
     </>
   )

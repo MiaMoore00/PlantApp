@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
+import Footer from './Components/Footer';
+
+
 
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
@@ -45,6 +48,7 @@ const setPicIdData = () => {
 
    
     return(
+        <>
         <div>
             Plant ID  
             <FileBase64 
@@ -66,6 +70,8 @@ const setPicIdData = () => {
 
           </ul>
         </div>
+        <Footer/>
+        </>
     )
 }
 

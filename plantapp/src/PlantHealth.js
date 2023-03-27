@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
 import './App.css'
 import { Link } from "react-router-dom";
+import Footer from "./Components/Footer"
 
 
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
@@ -53,7 +54,7 @@ const setPicIdData = () => {
       </Link>
       </p>
         </div>
-        <div className='body'>
+        <div className='bg-[rgb(152,182,152)]'>
             <div className='font-black bg-white py-5'>
             <h1 className='text-3xl text-[#3f6212]'>Get your Plant's Health Here!</h1>
             <h2>Upload a picture of your plant below</h2>
@@ -83,6 +84,7 @@ const setPicIdData = () => {
             })}</ul>
 
         </div>
+        <Footer/>
         </>
     )
 }
