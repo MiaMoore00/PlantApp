@@ -1,4 +1,6 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useMemo,} from "react";
+import {Card } from "reactstrap"
+
 
 export default function SearchBar({ placeholder, userId })  {
     
@@ -40,7 +42,7 @@ const [data,setData] = useState()
       };
 
     const plantData= useMemo(()=>{
-        if(!data) return null
+        if(!data) return 
         return data.map((plant)=>
 
     {return( <form onSubmit={handleFavorites}><div> <p key={plant.id}> <b>Common Name:</b>{plant.common_name} 
@@ -54,11 +56,17 @@ const [data,setData] = useState()
     })
     },[data])
 
+    
+
+
+
+
+
+
+
 
 useEffect(() => {
-    searchPlants()
-
-}, []);
+    searchPlants()  }, []);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -71,8 +79,9 @@ useEffect(() => {
 
 
     return(
-        <div className='pb-5 max-w-md mx-auto'>
-        <div className="relative flex items-center  h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+        
+        <div className='pb-5 '>
+        <div className="relative flex items-center  h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden ">
             <div className=" text-gray-300">
                  <button onClick={handleClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +91,7 @@ useEffect(() => {
             </div>
     
             <input className="peer sans-serif h-full w-full outline-none text-md text-gray-700 pr-2"
-            type="text"
+            type="search"
             onChange={handleChange}
             placeholder={placeholder}
             value={query} 
@@ -93,15 +102,11 @@ useEffect(() => {
         
            
         
-            <div>
-            
+           
+        <div class="py-8  columns-2 ...">
 
-               {plantData}
- 
-
-
+               {plantData} 
     </div>
-    
 
     </div>
     )
