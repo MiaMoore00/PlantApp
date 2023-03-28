@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchBar from '../Components/SearchBar';
-
+import SearchBar from '../components/SearchBar';
+import './Home.css'
 import { Link } from "react-router-dom";
 
 
 
-function Home() {
+function Home({userId}) {
   return (
     <>
       <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
@@ -18,15 +18,14 @@ function Home() {
         <b>Assess your plant health  </b>
       </button>
       </Link>
-      
-      <Link to="/PlantID">
-        <button className='p-2 rounded-md text-yellow-500'>
-      <b>Get more info on your plant </b>
-      </button> </Link>
-      
-      <div className='searchbarBox mx-auto max-w-screen-md  py-5 px-20'>
-      <SearchBar className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
-</div></div>
+     
+      <p><Link to="/PlantID"><button>
+        Get more info on your plant
+      </button>
+      </Link>
+      </p>
+      </div>
+      <SearchBar userId= {userId} className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
 
         
     </>

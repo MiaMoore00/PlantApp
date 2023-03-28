@@ -2,9 +2,11 @@ import React, {useState, useEffect, useMemo,} from "react";
 import {Card } from "reactstrap"
 
 
-export default function SearchBar({ placeholder })  {
- 
+export default function SearchBar({ placeholder, userId })  {
+    
 const [query, setQuery] = useState("");
+const [newFav, setNewFav] = useState("");
+
 console.log(query)
 
 const [data,setData] = useState()
@@ -21,30 +23,36 @@ const [data,setData] = useState()
        
         })
     } 
+    const handleFavorites = async (e) => {
+        e.preventDefault();
+        console.log("hello");
+        try {
+          const response = await fetch("http://localhost:3001/api/favorites", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({favorite: newFav, id: userId}),
+          });
+          const data = await response.json();
+       console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
     const plantData= useMemo(()=>{
         if(!data) return 
         return data.map((plant)=>
 
-    {return( 
-
-<div className =  "flex flex-row justify-start mt-8">
-
- 
-        <Card>
- <div key={plant.id}> {plant.default_image?<img src={plant.default_image.medium_url} alt="plant"></img>:null} 
-    
-    <p> 
-    <span><b> Common Name: </b>{plant.common_name} </span>
-    <span><b> Sunlight: </b> {plant.sunlight}</span>
-     <span><b> Scientific Name: </b>{plant.scientific_name} </span>
-     <span><b> Watering: </b> {plant.watering}</span> 
-    </p> </div>
- 
-    </Card> </div>
-
-
- )  
+    {return( <form onSubmit={handleFavorites}><div> <p key={plant.id}> <b>Common Name:</b>{plant.common_name} 
+     <b>Other Name:</b>{plant.other_name}
+     <b>Sunlight:</b> {plant.sunlight}<b> Scientific Name:</b>{plant.scientific_name} <b>Watering:</b> {plant.watering}
+    </p>
+    {plant.default_image?<img src={plant.default_image.medium_url} ></img>:null}
+    <button type="submit" id={plant.id} >Add to Favorites</button> 
+    {/* refer to scene it button! */}
+     </div></form>)// when I try to render image page goes blank 
     })
     },[data])
 
