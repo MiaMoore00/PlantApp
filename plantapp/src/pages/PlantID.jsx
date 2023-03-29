@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
 import SearchBar from '../Components/SearchBar';
 
-// key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
-// key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
 
 
 const PlantId = () => {
@@ -16,7 +14,7 @@ const PlantId = () => {
 
 const setPicIdData = () => {
     const data = {
-        api_key: "z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP",
+        api_key: "Y11w9SsCfq0zF0B7PVAhVnOosNpjyjjdwpdTD5WwbazBvzY7g1",
         images: [plantFile.base64.slice(23)],
         modifiers:["crops_fast","similar_images"],
         plant_language: "en",
