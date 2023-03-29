@@ -1,6 +1,5 @@
 import React from 'react';
-import SearchBar from '../components/SearchBar';
-import './Home.css'
+import SearchBar from '../Components/SearchBar';
 import { Link } from "react-router-dom";
 import Footer from '../Components/Footer';
 

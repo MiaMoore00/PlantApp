@@ -1,12 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-<<<<<<< HEAD
-import React from "react";
-import PlantId from "./pages/PlantID";
-=======
 import {React, useState} from "react";
-import PlantId from "./PlantID";
->>>>>>> main
+import PlantId from "./pages/PlantID";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
