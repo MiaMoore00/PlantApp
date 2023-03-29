@@ -9,33 +9,29 @@ import Footer from '../Components/Footer';
 function Home({userId}) {
   return (
     <>
-    
-    <div>
-      <h1 className="text-3xl py-5 font-bold underline text-green-700">
+      <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+      <h1 className="  text-3xl font-bold underline text-green-700">
         Super Duper Plant App!
       </h1>
       
-      <p><Link to="/PlantHealth"><button>
-        Assess your plant health
+    <Link to="/PlantHealth">
+        <button className='p-2  rounded-md text-yellow-500 '>
+        <b>Assess your plant health  </b>
       </button>
       </Link>
-      </p>
+     
       <p><Link to="/PlantID"><button>
         Get more info on your plant
       </button>
       </Link>
       </p>
-      <div>
-<<<<<<< HEAD
-      <SearchBar className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
+      </div>
+      {/* <SearchBar className ="display flex-auto " placeholder={'Search for your favorite plants!'}/> */}
       <Footer/>
-  </div>
-=======
+  {/* </div> */}
       <SearchBar userId= {userId} className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
 
-</div>
->>>>>>> main
-        </div>
+        
     </>
   )
 }

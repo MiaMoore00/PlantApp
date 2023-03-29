@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-import Footer from './Components/Footer';
-
-
+import SearchBar from '../Components/SearchBar';
 
 // key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
@@ -48,8 +46,7 @@ const setPicIdData = () => {
 
    
     return(
-        <>
-        <div>
+        <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
             Plant ID  
             <FileBase64 
             multiple={false}
@@ -70,9 +67,8 @@ const setPicIdData = () => {
           })}
 
           </ul>
+          <SearchBar></SearchBar>
         </div>
-        <Footer/>
-        </>
     )
 }
 
