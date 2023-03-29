@@ -8,20 +8,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Footer = () => {
   return (
-    <body className=''>
+    <body className='bg-transparent'>
     <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 pt-3 static inset-x-0 bottom-0">
-    <div className="col mb-3 flex justify-center">
+    <div className="col flex justify-center">
     <a href="/" className="d-flex align-items-center ">
         <img className ='  max-h-36' src={Logo}/>      
     </a>
       
     </div>
 
-    <div className="col mb-3">
+    <div className="col">
     
     </div>
 
-    <div className="col mb-3">
+    <div className="col">
       <h5>Resources</h5>
       <ul className="nav flex-column">
         <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary link-success">Using Bloom</a></li>
@@ -31,7 +31,7 @@ export const Footer = () => {
       </ul>
     </div>
 
-    <div className="col mb-3">
+    <div className="col">
       <h5>Company</h5>
       <ul className="nav flex-column">
       <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary link-success">About Us</a></li>
@@ -42,7 +42,7 @@ export const Footer = () => {
       </ul>
     </div>
 
-    <div className="col mb-3">
+    <div className="col">
       <h5>Social</h5>
       <ul className="nav flex-column">
       <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary link-success">Twitter</a></li>

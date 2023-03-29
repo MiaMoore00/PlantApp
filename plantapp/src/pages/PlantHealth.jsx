@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-
 import { Link } from "react-router-dom";
 import SearchBar from '../Components/SearchBar';
 

@@ -16,7 +16,7 @@ const  App=() =>{
   console.log(userId);
 return (
 <>
-<div id="background">
+
   <Router>
   
         <Routes>
@@ -31,7 +31,7 @@ return (
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
     
-    </ Router></div>
+    </ Router>
     </>
   );
 }
