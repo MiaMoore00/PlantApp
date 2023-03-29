@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import './Home.css'
 import { Link } from "react-router-dom";
+import Footer from '../Components/Footer';
 
 
 
@@ -25,6 +26,9 @@ function Home({userId}) {
       </Link>
       </p>
       </div>
+      {/* <SearchBar className ="display flex-auto " placeholder={'Search for your favorite plants!'}/> */}
+      <Footer/>
+  {/* </div> */}
       <SearchBar userId= {userId} className ="display flex-auto " placeholder={'Search for your favorite plants!'}/>
 
         
