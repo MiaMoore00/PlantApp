@@ -13,6 +13,7 @@
     padding: 30px;
     border-radius: 50px;
     background: #c3dab8;
+    opacity: 80%;
 }
 .form.signup{
     opacity: 1;
@@ -34,11 +35,7 @@ header {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#background {
-    background-image: url("/public/images/leaf.png");
-    background-size: 100px 120px;
-    background-repeat: repeat space;
-}
+
 
 form{
     margin-top: 30px;
