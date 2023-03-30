@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-import SearchBar from '../Components/SearchBar';
+
+import { Link } from "react-router-dom";
 
 
 
@@ -44,28 +45,46 @@ const setPicIdData = () => {
 
    
     return(
-        <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
-            Plant ID  
+        <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+            
+            <Link to="/PlantHealth">
+        <button className='p-2  rounded-md text-orange-700 '>
+        <b>🌱Assess your plant health  </b>
+      </button>
+      </Link>
+     
+      <Link to="/">
+        <button className='p-2  rounded-md text-orange-700 '>
+        <b> 🏠Home </b>
+      </button>
+      </Link> 
+      <h1 className='text-3xl text-[#3f6212]'>Identify Your Plant!</h1>
+            <h2>Upload a Picture of Your Plant🪴 Below ↓</h2>
+      <div className="upload py-5">
             <FileBase64 
             multiple={false}
             onDone={handleInput}
             />
-             
-            <button onClick={setPicIdData}>Analyze Plant </button>
+             </div>
+            <button className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer  border-solid border-green-700 align-top"onClick={setPicIdData}>Analyze Plant🔍 </button>
             
           <ul>{plantInfo?.map((plantArray) => {
-            return <li key={plantArray.id}>
-               <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
-               <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
-               <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
-               <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
+            return  <div className ="p-5 flex  justify-center ">
+                <li key={plantArray.id}><img className ="rounded-full mx-auto"  src={plantArray.similar_images[0].url}></img> <br />
+               <b>Common Names: </b>{plantArray.plant_details.common_names} <br />
+               <b>Scientific Names: </b>{plantArray.plant_details.scientific_name}<br />
+               <b>Taxonomy: 
+                </b>Class- {plantArray.plant_details.taxonomy.class}, Family- {plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
+                <br />
+                <b>Plant Description: </b>{plantArray.plant_details.wiki_description.value}<br />
+               <b><a className = "text-green-600 " href={plantArray.plant_details.url}>Click Here for more info!</a></b><br />
                 {/* I need to put a condition if null... */}
-                <button value={plantArray.plant_details.common_names}>Add to Favorites</button>
-            </li>
+                <button className='  rounded-md text-orange-500'  value={plantArray.plant_details.common_names}>Add to Favorites💚</button></li>
+            </div>
           })}
 
           </ul>
-          <SearchBar></SearchBar>
+          
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
 
 import { Link } from "react-router-dom";
-import SearchBar from '../Components/SearchBar';
+
 
 
 
@@ -48,48 +48,48 @@ const setPicIdData = () => {
         <>
 
         
-        <div className="display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
-        <p><Link to="/PlantID" className='p-2  rounded-md text-yellow-500 '><button>
-        <b>Identify Your Plant</b>
+        <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+        
+        <Link to="/PlantID" ><button className='p-2  rounded-md text-orange-700 '>
+        <b>🔎Identify Your Plant</b>
       </button>
       </Link>
       
       <Link to="/">
-        <button className='p-2  rounded-md text-yellow-500 '>
-        <b> Home </b>
+        <button className='p-2  rounded-md text-orange-700 '>
+        <b> 🏠Home </b>
       </button>
-      </Link></p>
+      </Link>
 
-        <div className='body'>
+        
             
-            <h1 className='text-3xl text-[#3f6212]'>Get your Plant's Health Here!</h1>
-            <h2>Upload a picture of your plant below</h2>
-            </div>
-            <div className=''>
-            </div>
+            <h1 className='text-3xl text-[#3f6212]'>Get Your Plant's Health Here!</h1>
+            <h2>Upload a Picture of Your Plant🪴 Below ↓</h2>
             <div className="upload py-5">
             <FileBase64
             multiple={false}
             onDone={handleInput}
             />
             </div>
-            <div>
+            
             <button 
             onClick={setPicIdData}
-            className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer border border-solid border-black align-top"
+            className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer  align-top"
             >
-                Click here for a Health Assessment of your Plant! 
+                Assess Plant🔍
             </button>
-            
-            <p> {plantHealth!==null?plantHealth?"true":"false":null}</p>
+           <div className = " p-5 flex flex-col justify-center ">
+           
+            <p> {plantHealth!==null?plantHealth?<b>Everything Looks Good, Your Plant Is Healthy!🌱</b>:<h3>Lets Take Care Of That Plant!🌱 </h3>:null}</p>
             {/* if the thing is null then we are saying don't show anything */}
-            <ul>{plantDiseases?.map((disease) =>  {
-               return <li key={disease.entity_id}><b>Potential issue:</b>{disease.name} <b>| Treatment Plan Options:</b>{disease.disease_details.treatment.biological} 
-               <b><a src={disease.disease_details.url}>Click here for more info</a></b>
-               </li>
-            })}</ul>
-<SearchBar>      </SearchBar>
-    </div></div>
+            {plantDiseases?.map((disease) =>  {
+               return <p> <ul><span><li key={disease.entity_id}><img class= "mx-auto" src={disease.similar_images[0].url}></img> <b>Potential issue:  </b>{disease.name} <b>| Treatment Plan Options: </b>{disease.disease_details.treatment.biological} 
+               <b>  <a className = "text-green-600 "href ={disease.disease_details.url}>   Click here for more info!</a></b> 
+              
+               </li></span></ul></p>  
+            })}</div>
+
+   </div>
         </>
     )
 }
