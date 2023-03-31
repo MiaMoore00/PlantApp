@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // make sure user can't access protected pages if not logged in.
 =======
 import videoBg from "./assets/video2.mp4"
+import Footer from "./Components/Footer";
 
 
 
@@ -54,7 +55,9 @@ return (
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
     
-    </ Router></div>
+    </ Router>
+    </div>
+    
     </>
   );
 }

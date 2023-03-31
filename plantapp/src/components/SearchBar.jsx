@@ -47,10 +47,17 @@ const [data,setData] = useState()
 
         {return( 
 
-          <div className =  "flex flex-row justify-start mt-9">
-        <Card className="card bg-transparent">
-           <div key={plant.id}> {plant.default_image?<img className="rounded-full " src={plant.default_image.medium_url} alt="plant"></img>:null} 
+          <div className = "flex flex-row justify-start mt-9 ml-3 rounded-full">
+        <div className="card bg-transparent text-white rounded-full ">
+           <div class="card-img" key={plant.id}> {plant.default_image?<img className=" rounded-lg" src={plant.default_image.medium_url} alt="plant"></img>:null} </div>
+          <div class="card-body">
+              <div className="card-title uppercase"><h4>{plant.common_name}  </h4></div> 
+              <b> ☀️Sunlight: </b> {plant.sunlight}<br />
+               <b> 🧬Scientific Name: </b>{plant.scientific_name} <br />
+               <b>💦 Watering: </b> {plant.watering} 
+              </div></div> </div>
           
+
               <p> 
 
               <span><b> Common Name: </b>{plant.common_name} </span>
@@ -69,6 +76,7 @@ const [data,setData] = useState()
 
           
               </Card> </div>
+
           
           
            )  

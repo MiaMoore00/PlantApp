@@ -18,6 +18,7 @@ export const Footer = () => {
     </div>
 
     <div className="col">
+
       <h5>Resources</h5>
       <ul className="nav flex-column">
         <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary link-success">Using Bloom</a></li>

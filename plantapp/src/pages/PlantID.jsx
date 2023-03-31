@@ -48,7 +48,7 @@ const setPicIdData = () => {
 
    
     return(
-        <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+        <div className="bg-opacity-40 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
             
             <Link to="/PlantHealth">
         <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
