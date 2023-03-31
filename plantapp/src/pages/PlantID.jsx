@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-
+import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
 
-// key for plant app  = z0EpYoHf0fM03XQTHFPY15OhgV1o2CUefZBjSu1xq7KOivRraP
-// key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
 
 
-const PlantId = () => {
+const PlantId = ({userId}) => {
    const [plantFile, setPlantFile] = useState(null);
    const [plantInfo, setPlantInfo] = useState(null);
-
+console.log(plantInfo);
    const handleInput = (files) => {
     setPlantFile(files);
    };
+
+
+
 
 const setPicIdData = () => {
     const data = {
@@ -50,17 +51,23 @@ const setPicIdData = () => {
         <div className="bg-opacity-40 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
             
             <Link to="/PlantHealth">
-        <button className='p-2  rounded-md text-orange-700 '>
-        <b>🌱Assess your plant health  </b>
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+        <b>🌱 Assess your plant health  </b>
       </button>
       </Link>
      
       <Link to="/">
-        <button className='p-2  rounded-md text-orange-700 '>
-        <b> 🏠Home </b>
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+        <b> 🏠 Home </b>
       </button>
+      </Link>
+
+      <Link to="/Favorites">
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500'>
+      <b>💚 Favorite Plants </b>
+      </button> 
       </Link> 
-      <h1 className='text-3xl text-[#3f6212]'>Identify Your Plant!</h1>
+      <h1 className='text-3xl text-[#3f6212] pt-2'>Identify Your Plant!</h1>
             <h2>Upload a Picture of Your Plant🪴 Below ↓</h2>
       <div className="upload py-5">
             <FileBase64 
@@ -71,6 +78,21 @@ const setPicIdData = () => {
             <button className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer  border-solid border-green-700 align-top"onClick={setPicIdData}>Analyze Plant🔍 </button>
             
           <ul>{plantInfo?.map((plantArray) => {
+
+            console.log(plantArray);
+            return <li key={plantArray.id}>
+               <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
+               <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
+               <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
+               <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
+                {/* I need to put a condition if null... */}
+                <button>Add to Favorites</button>
+            </li>
+          })}
+
+          </ul>
+          <SearchBar userId={userId}></SearchBar>
+
             return  <div className ="p-5 flex  justify-center ">
                 <li key={plantArray.id}><img className ="rounded-full mx-auto"  src={plantArray.similar_images[0].url}></img> <br />
                <b>Common Names: </b>{plantArray.plant_details.common_names} <br />
@@ -86,7 +108,10 @@ const setPicIdData = () => {
           })}
 
           </ul>
-          
+
+          <div class="min-h-screen">
+        <div className="sticky top-[100vh]"><Footer/></div>
+      </div>
         </div>
     )
 }

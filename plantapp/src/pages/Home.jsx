@@ -14,12 +14,18 @@ function Home({userId}) {
               <Link to="/PlantHealth">
         <button className='p-2  rounded-md text-orange-700 '>
         <b>🌱Assess your plant health  </b>
+
       </button>
       </Link>
      
       <Link to="/PlantID">
-        <button className='p-2 rounded-md text-orange-700'>
-      <b>🔎Get more info on your plant </b>
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500'>
+      <b>🔎 Get more info on your plant </b>
+      </button> </Link>
+
+      <Link to="/Favorites">
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500'>
+      <b>💚 Favorite Plants </b>
       </button> </Link>
 
 
