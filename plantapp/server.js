@@ -81,6 +81,12 @@ const newFavorites = currentUserFavorites ? [...currentUserFavorites, favorites]
   }
 })
 
+app.get("/api/favoritesList", async (req,res) => {
+  const userFavorites = await User.findAll();
+    res.json(userFavorites);
+})
+
+
 app.listen(PORT, async () => {
   console.log(`Listening on port ${PORT}`);
   try {

@@ -2,9 +2,24 @@ import React from 'react';
 import './Favorites.css'
 import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
+import { useMemo } from 'react';
 
-function Favorites() {
-  return (
+const Favorites=({favoritePlant, plantName}) => {
+  console.log(favoritePlant);
+  const savedFavorites = useMemo(() => {
+    return Array.from(favoritePlant).map(favorites => {
+      console.log(favorites);
+      return(
+       <div className="favorites-preview" key={favorites.id}>
+        <Link to={`/api/favoritesList`}>
+          <h2>{favoritePlant.plantName}</h2>
+        </Link>
+       </div>
+    )
+    })
+  }, [favoritePlant])
+  console.log(savedFavorites);
+return (
     <>
     <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
         <Link to="/PlantID">
@@ -26,8 +41,8 @@ function Favorites() {
         </Link>
             
         <h1 className='text-3xl pt-2 text-[#3f6212]'>Favorite Plants!</h1>
-
-        //Lauren, add your data here, the cards should be styled already when you put it on there, if not mia and I can look at it//
+<h2>{plantName}</h2>
+        {savedFavorites}
         <div className='card'>
 
 

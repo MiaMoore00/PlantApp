@@ -44,7 +44,7 @@ return (
   
         <Routes>
           <Route path="/" element={<Login setUserId={setUserId} />} />
-          <Route path="home" element={<Home userId={userId} />} />
+          <Route path="Home" element={<Home userId={userId} />} />
           <Route path="register" element={<Register />} />
           <Route path="PlantHealth" element={<PlantHealth />} />
           <Route path="PlantID" element={<PlantId userId={userId}/>} />
