@@ -56,7 +56,7 @@ const setPicIdData = () => {
       </button>
       </Link>
      
-      <Link to="/">
+      <Link to="/Home">
         <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
         <b> 🏠 Home </b>
       </button>
@@ -80,18 +80,8 @@ const setPicIdData = () => {
           <ul>{plantInfo?.map((plantArray) => {
 
             console.log(plantArray);
-            return <li key={plantArray.id}>
-               <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
-               <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
-               <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
-               <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
-                {/* I need to put a condition if null... */}
-                <button>Add to Favorites</button>
-            </li>
-          })}
-
-          </ul>
-          <SearchBar userId={userId}></SearchBar>
+            
+        //   <SearchBar userId={userId}></SearchBar>
 
             return  <div className ="p-5 flex  justify-center ">
                 <li key={plantArray.id}><img className ="rounded-full mx-auto"  src={plantArray.similar_images[0].url}></img> <br />

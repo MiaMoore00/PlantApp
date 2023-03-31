@@ -55,27 +55,9 @@ const [data,setData] = useState()
               <b> ☀️Sunlight: </b> {plant.sunlight}<br />
                <b> 🧬Scientific Name: </b>{plant.scientific_name} <br />
                <b>💦 Watering: </b> {plant.watering} 
+               <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
               </div></div> </div>
-          
-
-              <p> 
-
-              <span><b> Common Name: </b>{plant.common_name} </span>
-              <span><b> Sunlight: </b> {plant.sunlight}</span>
-               <span><b> Scientific Name: </b>{plant.scientific_name} </span>
-               <span><b> Watering: </b> {plant.watering}</span> 
-              </p> 
-              <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
-              </div>
-
-              <span><b> 🪴Common Name: </b>{plant.common_name} </span> <br />
-              <span><b> ☀️Sunlight: </b> {plant.sunlight}</span><br />
-               <span><b> 🧬Scientific Name: </b>{plant.scientific_name} </span><br />
-               <span><b>💦 Watering: </b> {plant.watering}</span> 
-              </p> </div>
-
-          
-              </Card> </div>
+        
 
           
           
