@@ -47,13 +47,12 @@ const [data,setData] = useState()
 
         {return( 
 
-          <div className =  "flex flex-row justify-start mt-8">
-          
-          
-                  <Card>
-           <div key={plant.id}> {plant.default_image?<img src={plant.default_image.medium_url} alt="plant"></img>:null} 
+          <div className =  "flex flex-row justify-start mt-9">
+        <Card className="card bg-transparent">
+           <div key={plant.id}> {plant.default_image?<img className="rounded-full " src={plant.default_image.medium_url} alt="plant"></img>:null} 
           
               <p> 
+
               <span><b> Common Name: </b>{plant.common_name} </span>
               <span><b> Sunlight: </b> {plant.sunlight}</span>
                <span><b> Scientific Name: </b>{plant.scientific_name} </span>
@@ -61,6 +60,13 @@ const [data,setData] = useState()
               </p> 
               <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
               </div>
+
+              <span><b> 🪴Common Name: </b>{plant.common_name} </span> <br />
+              <span><b> ☀️Sunlight: </b> {plant.sunlight}</span><br />
+               <span><b> 🧬Scientific Name: </b>{plant.scientific_name} </span><br />
+               <span><b>💦 Watering: </b> {plant.watering}</span> 
+              </p> </div>
+
           
               </Card> </div>
           

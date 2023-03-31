@@ -9,8 +9,12 @@ import Favorites from "./pages/Favorites";
 import PlantHealth from './pages/PlantHealth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 // add authentication that checks if the user is logged in. 
 // make sure user can't access protected pages if not logged in.
+=======
+import videoBg from "./assets/video2.mp4"
+
 
 
 const  App=() =>{
@@ -18,7 +22,24 @@ const  App=() =>{
   console.log(userId);
 return (
 <>
-<div id="background">
+<div className="main ">
+  <video src ={videoBg} autoPlay loop muted  
+  style = {{
+    position:"fixed",
+    width:"100vw",
+    left:"50%",
+    top:"50%",
+    height:"100vh",
+    objectFit:"cover",
+    transform:"translate(-50%,-50%)",
+    zIndex:"-1"
+  }}
+    
+    
+    
+    />
+  
+
   <Router>
   
         <Routes>
