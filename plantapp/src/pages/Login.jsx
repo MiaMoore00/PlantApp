@@ -22,7 +22,7 @@ const Login = ({setUserId}) => {
       if (response.ok) {
         console.log(data);
         setUserId(data.userId)
-        navigate("/");
+        navigate("/Home");
       } else {
         // Display error message to user
       }

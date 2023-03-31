@@ -23,8 +23,7 @@ const [data,setData] = useState()
        
         })
     } 
-    const handleFavorites = async (e) => {
-        e.preventDefault();
+    const handleFavorites = async (plantId) => {
         console.log("hello");
         try {
           const response = await fetch("http://localhost:3001/api/favorites", {
@@ -32,7 +31,7 @@ const [data,setData] = useState()
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({favorite: newFav, id: userId}),
+            body: JSON.stringify({favorites: plantId, userId: userId}),
           });
           const data = await response.json();
        console.log(data);
@@ -53,11 +52,21 @@ const [data,setData] = useState()
            <div key={plant.id}> {plant.default_image?<img className="rounded-full " src={plant.default_image.medium_url} alt="plant"></img>:null} 
           
               <p> 
+
+              <span><b> Common Name: </b>{plant.common_name} </span>
+              <span><b> Sunlight: </b> {plant.sunlight}</span>
+               <span><b> Scientific Name: </b>{plant.scientific_name} </span>
+               <span><b> Watering: </b> {plant.watering}</span> 
+              </p> 
+              <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
+              </div>
+
               <span><b> 🪴Common Name: </b>{plant.common_name} </span> <br />
               <span><b> ☀️Sunlight: </b> {plant.sunlight}</span><br />
                <span><b> 🧬Scientific Name: </b>{plant.scientific_name} </span><br />
                <span><b>💦 Watering: </b> {plant.watering}</span> 
               </p> </div>
+
           
               </Card> </div>
           
