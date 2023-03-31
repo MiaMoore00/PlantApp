@@ -9,6 +9,7 @@ import Favorites from "./pages/Favorites";
 import PlantHealth from './pages/PlantHealth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import videoBg from "./assets/video2.mp4"
+import Footer from "./Components/Footer";
 
 
 const  App=() =>{
@@ -48,7 +49,9 @@ return (
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
     
-    </ Router></div>
+    </ Router>
+    </div>
+    
     </>
   );
 }
