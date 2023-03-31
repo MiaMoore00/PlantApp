@@ -51,7 +51,7 @@ return (
           
         </Routes>
         <Routes>
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/favorites" element={<Favorites userId={userId}/>} />
         </Routes>
     
     </ Router>

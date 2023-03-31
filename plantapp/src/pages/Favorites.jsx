@@ -1,24 +1,47 @@
-import React from 'react';
+import {React, useState } from 'react';
 import './Favorites.css'
 import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
 import { useMemo } from 'react';
 
-const Favorites=({favoritePlant, plantName}) => {
-  console.log(favoritePlant);
-  const savedFavorites = useMemo(() => {
-    return Array.from(favoritePlant).map(favorites => {
-      console.log(favorites);
-      return(
-       <div className="favorites-preview" key={favorites.id}>
-        <Link to={`/api/favoritesList`}>
-          <h2>{favoritePlant.plantName}</h2>
-        </Link>
-       </div>
-    )
-    })
-  }, [favoritePlant])
-  console.log(savedFavorites);
+
+
+const Favorites=({userId}) => {
+
+  const [favoritesList, setFavoritesList] = useState([]);
+
+  const handleFavorites = async () => {
+
+    try {
+      const response = await fetch("http://localhost:3001/api/favoritesList", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          id : userId
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setFavoritesList(data);
+        console.log(data);
+      } else {
+        // Display error message to user
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+// fetch(`test${e}.com`)
+  // const plantData = () =>{
+  //   favoritesList.map(e => {
+  //     const response = await fetch 
+      // fetch the URL with the plant ID to fetch. WHen it asks for the ID instead: id{e}
+  //       method: "GET",
+  //     console.log(e);
+  //   })
+  // }
+console.log(favoritesList);
+
 return (
     <>
     <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
@@ -41,8 +64,9 @@ return (
         </Link>
             
         <h1 className='text-3xl pt-2 text-[#3f6212]'>Favorite Plants!</h1>
-<h2>{plantName}</h2>
-        {savedFavorites}
+
+        <button onClick={handleFavorites}>show favorites</button>
+        <button onClick={plantData}>Display plant info</button>
         <div className='card'>
 
 
