@@ -25,11 +25,21 @@ function Favorites() {
           </button>
         </Link>
             
-        <h1 className='text-3xl text-[#3f6212]'>Favorite Plants💚</h1>
+        <h1 className='text-3xl pt-2 text-[#3f6212]'>Favorite Plants!</h1>
+
+        //Lauren, add your data here, the cards should be styled already when you put it on there, if not mia and I can look at it//
+        <div className='card'>
+
+
+
+
+        </div>
             
             
-           
-        <Footer/>
+      <div class="min-h-screen">
+        <div className="sticky top-[100vh]"><Footer/></div>
+      </div>
+        
    </div>
   
         </>

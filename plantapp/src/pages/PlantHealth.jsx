@@ -50,20 +50,26 @@ const setPicIdData = () => {
         
         <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
         
-        <Link to="/PlantID" ><button className='p-2  rounded-md text-orange-700 '>
-        <b>🔎Identify Your Plant</b>
+        <Link to="/PlantID" ><button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+        <b>🔎 Identify Your Plant</b>
       </button>
       </Link>
       
       <Link to="/">
-        <button className='p-2  rounded-md text-orange-700 '>
-        <b> 🏠Home </b>
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+        <b> 🏠 Home </b>
       </button>
       </Link>
 
+      <Link to="/Favorites">
+        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500'>
+      <b>💚 Favorite Plants </b>
+      </button> 
+      </Link> 
+
         
             
-            <h1 className='text-3xl text-[#3f6212]'>Get Your Plant's Health Here!</h1>
+            <h1 className='text-3xl text-[#3f6212] pt-2'>Get Your Plant's Health Here!</h1>
             <h2>Upload a Picture of Your Plant🪴 Below ↓</h2>
             <div className="upload py-5">
             <FileBase64
@@ -90,7 +96,9 @@ const setPicIdData = () => {
             })}
             
             </div>
-            <Footer/>
+            <div class="min-h-screen">
+        <div className="sticky top-[100vh]"><Footer/></div>
+      </div>
    </div>
         </>
     )
