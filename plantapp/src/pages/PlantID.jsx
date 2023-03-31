@@ -93,7 +93,8 @@ const setPicIdData = () => {
                 <b>Plant Description: </b>{plantArray.plant_details.wiki_description.value}<br />
                <b><a className = "text-green-600 " href={plantArray.plant_details.url}>Click Here for more info!</a></b><br />
                 {/* I need to put a condition if null... */}
-                <button className='  rounded-md text-orange-500'  value={plantArray.plant_details.common_names}>Add to Favorites💚</button></li>
+                {/* <button className='  rounded-md text-orange-500'  value={plantArray.plant_details.common_names}>Add to Favorites💚</button> */}
+                </li>
             </div>
           })}
 
