@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-
+import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
 
 
@@ -84,7 +84,7 @@ const setPicIdData = () => {
           })}
 
           </ul>
-          
+          <Footer/>
         </div>
     )
 }

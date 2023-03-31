@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
-
+import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
 
 
@@ -87,8 +87,10 @@ const setPicIdData = () => {
                <b>  <a className = "text-green-600 "href ={disease.disease_details.url}>   Click here for more info!</a></b> 
               
                </li></span></ul></p>  
-            })}</div>
-
+            })}
+            
+            </div>
+            <Footer/>
    </div>
         </>
     )
