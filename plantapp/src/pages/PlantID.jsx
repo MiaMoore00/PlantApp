@@ -5,13 +5,16 @@ import { Link } from "react-router-dom";
 
 
 
-const PlantId = () => {
+const PlantId = ({userId}) => {
    const [plantFile, setPlantFile] = useState(null);
    const [plantInfo, setPlantInfo] = useState(null);
-
+console.log(plantInfo);
    const handleInput = (files) => {
     setPlantFile(files);
    };
+
+
+
 
 const setPicIdData = () => {
     const data = {
@@ -75,6 +78,21 @@ const setPicIdData = () => {
             <button className="bg-[rgb(102,144,104)] w-48 h-12 rounded-full cursor-pointer  border-solid border-green-700 align-top"onClick={setPicIdData}>Analyze Plant🔍 </button>
             
           <ul>{plantInfo?.map((plantArray) => {
+
+            console.log(plantArray);
+            return <li key={plantArray.id}>
+               <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
+               <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
+               <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
+               <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
+                {/* I need to put a condition if null... */}
+                <button>Add to Favorites</button>
+            </li>
+          })}
+
+          </ul>
+          <SearchBar userId={userId}></SearchBar>
+
             return  <div className ="p-5 flex  justify-center ">
                 <li key={plantArray.id}><img className ="rounded-full mx-auto"  src={plantArray.similar_images[0].url}></img> <br />
                <b>Common Names: </b>{plantArray.plant_details.common_names} <br />
@@ -90,6 +108,7 @@ const setPicIdData = () => {
           })}
 
           </ul>
+
           <div class="min-h-screen">
         <div className="sticky top-[100vh]"><Footer/></div>
       </div>
