@@ -49,20 +49,32 @@ app.post("/api/login", async (req, res) => {
     res.status(400).json(error);
   }
 });
+// above needs to check password
+// we also don't have column for password
+// we also need to create a session.
+// look into authentication using express sessions
 
 app.put("/api/favorites", async (req,res) => {
+  console.log(req.body);
   try {
     const {userId, favorites} = req.body;
     console.log(req.body)
+const currentUser = await User.findByPk(userId)
+console.log(currentUser);
+const currentUserFavorites = currentUser?.favorite
+console.log(currentUserFavorites);
+const newFavorites = currentUserFavorites ? [...currentUserFavorites, favorites] : [favorites] 
+
     User.update({
-      favorite: favorites
+      favorite: newFavorites
+      
     },
     {
       where:{
         id: userId
       }
     })
-    res.json("added to favorites")
+    res.json(newFavorites)
   }
   catch (error){
     console.log(error);

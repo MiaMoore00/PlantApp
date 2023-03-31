@@ -9,6 +9,8 @@ import Favorites from "./pages/Favorites";
 import PlantHealth from './pages/PlantHealth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// add authentication that checks if the user is logged in. 
+// make sure user can't access protected pages if not logged in.
 
 
 const  App=() =>{
@@ -20,11 +22,11 @@ return (
   <Router>
   
         <Routes>
-          <Route path="/" element={<Home userId={userId} />} />
-          <Route path="login" element={<Login setUserId={setUserId} />} />
+          <Route path="/" element={<Login setUserId={setUserId} />} />
+          <Route path="home" element={<Home userId={userId} />} />
           <Route path="register" element={<Register />} />
           <Route path="PlantHealth" element={<PlantHealth />} />
-          <Route path="PlantID" element={<PlantId />} />
+          <Route path="PlantID" element={<PlantId userId={userId}/>} />
           
         </Routes>
         <Routes>

@@ -23,8 +23,7 @@ const [data,setData] = useState()
        
         })
     } 
-    const handleFavorites = async (e) => {
-        e.preventDefault();
+    const handleFavorites = async (plantId) => {
         console.log("hello");
         try {
           const response = await fetch("http://localhost:3001/api/favorites", {
@@ -32,7 +31,7 @@ const [data,setData] = useState()
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({favorite: newFav, id: userId}),
+            body: JSON.stringify({favorites: plantId, userId: userId}),
           });
           const data = await response.json();
        console.log(data);
@@ -59,7 +58,9 @@ const [data,setData] = useState()
               <span><b> Sunlight: </b> {plant.sunlight}</span>
                <span><b> Scientific Name: </b>{plant.scientific_name} </span>
                <span><b> Watering: </b> {plant.watering}</span> 
-              </p> </div>
+              </p> 
+              <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
+              </div>
           
               </Card> </div>
           

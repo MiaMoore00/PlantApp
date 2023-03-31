@@ -6,13 +6,16 @@ import SearchBar from '../Components/SearchBar';
 // key for insect app = cVAN7vCErWcnyUDRGW6wHrGOp2FEtRsYxHXhGt9tsvVZHes6zd
 
 
-const PlantId = () => {
+const PlantId = ({userId}) => {
    const [plantFile, setPlantFile] = useState(null);
    const [plantInfo, setPlantInfo] = useState(null);
-
+console.log(plantInfo);
    const handleInput = (files) => {
     setPlantFile(files);
    };
+
+
+
 
 const setPicIdData = () => {
     const data = {
@@ -56,18 +59,19 @@ const setPicIdData = () => {
             <button onClick={setPicIdData}>Analyze Plant </button>
             
           <ul>{plantInfo?.map((plantArray) => {
+            console.log(plantArray);
             return <li key={plantArray.id}>
                <b>Common Names:</b>{plantArray.plant_details.common_names} <b>Scientific Names:</b>{plantArray.plant_details.scientific_name}
                <b>Taxonomy:</b>Class-{plantArray.plant_details.taxonomy.class}, Family-{plantArray.plant_details.taxonomy.family} , Kingdom- {plantArray.plant_details.taxonomy.kingdom}
                <b>Plant Description:</b>{plantArray.plant_details.wiki_description.value}
                <img src={plantArray.similar_images[0].url}></img> <b><a href={plantArray.plant_details.url}>Click Here for more info!</a></b>
                 {/* I need to put a condition if null... */}
-                <button value={plantArray.plant_details.common_names}>Add to Favorites</button>
+                <button>Add to Favorites</button>
             </li>
           })}
 
           </ul>
-          <SearchBar></SearchBar>
+          <SearchBar userId={userId}></SearchBar>
         </div>
     )
 }
