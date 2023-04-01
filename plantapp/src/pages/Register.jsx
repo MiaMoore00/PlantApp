@@ -7,7 +7,6 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [errorVisible, setErrorVisible] = useState('hidden-message');
 
   const navigate = useNavigate();
 
@@ -29,10 +28,8 @@ const Register = () => {
   .then((response) => response.json())
   .then((data) => {
       if(data.success) {
-          setErrorVisible('hidden-message');
           navigate("/Home");
       } else {
-          setErrorVisible('visible-message');
       }
   })
 
@@ -116,7 +113,6 @@ const Register = () => {
                   Login
                 </Link>
               </span>
-              <p><span className={errorVisible}>Invalid username or password</span></p>
             </div>
           </div>
         </div>
