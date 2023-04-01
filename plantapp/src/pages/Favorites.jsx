@@ -6,7 +6,7 @@ import { useMemo } from 'react';
 import videoBg from "../assets/video8.mp4"
 
 
-const Favorites = ({ userId = 1 }) => {
+const Favorites = ({ userId}) => {
   const [favoritesList, setFavoritesList] = useState([]);
   useEffect(() => {
     const handleFavorites = async () => {
@@ -16,7 +16,7 @@ const Favorites = ({ userId = 1 }) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            id: 1
+            id: userId
           },
         });
         const data = await response.json();
@@ -72,12 +72,12 @@ handleFavorites();
         <h1 className='text-3xl pt-2 text-[#3f6212]'>Favorite Plants!</h1>
 
 
-        <div className='card'>
+        
         {
         favoritesList.map( favorite =>{
           return (
             <>
-
+                <div className='card'>
         <div className="card bg-transparent text-white rounded-full">
            <div class="card-img" key={favorite.id}> {favorite.default_image?<img className="rounded-lg" src={favorite.default_image.medium_url} alt="favorite"></img>:null} </div>
           <div class="card-body">
@@ -85,7 +85,7 @@ handleFavorites();
               <b> ☀️Sunlight: </b> {favorite.sunlight}<br />
                <b> 🧬Scientific Name: </b>{favorite.scientific_name} <br />
                <b>💦 Watering: </b> {favorite.watering} 
-              </div></div>
+              </div></div></div>
 
 
             
@@ -93,21 +93,15 @@ handleFavorites();
           )
         })   
     }
-        </div>
+        
 
 
         <div class="min-h-screen">
           <div className="sticky top-[100vh]"><Footer /></div>
         </div>
 
+      </div>  
       </div>
-
-
-    
-
-        
-   </div>
-  
         </>
 
   )
