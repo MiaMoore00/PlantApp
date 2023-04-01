@@ -3,7 +3,7 @@ import './Favorites.css'
 import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
 import { useMemo } from 'react';
-
+import videoBg from "../assets/video8.mp4"
 
 
 const Favorites = ({ userId = 1 }) => {
@@ -41,10 +41,16 @@ handleFavorites();
   
   return (
     <>
+
   
 
 
-      <div className="bg-opacity-70 display flex-auto text-center  mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+      
+
+    <div className="main ">
+        <video src ={videoBg} autoPlay loop muted className='fixed w-screen left-1/2 top-1/2 h-screen object-cover -translate-y-1/2 -translate-x-1/2 -z-10'/>
+    <div className="bg-opacity-70 display flex-auto text-center  mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+
         <Link to="/PlantID">
           <button className='p-2 mt-3 mx-2 bg-green-900 rounded-md text-orange-400'>
             <b>🔎Identify Your Plant</b>
@@ -96,7 +102,15 @@ handleFavorites();
 
       </div>
 
-    </>
+
+    
+
+        
+   </div>
+   </div>
+  
+        </>
+
   )
 }
 
