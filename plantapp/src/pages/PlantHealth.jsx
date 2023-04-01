@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FileBase64 from 'react-file-base64';
 import Footer from '../Components/Footer';
 import { Link } from "react-router-dom";
+import videoBg from "../assets/video5.mp4"
 
 
 
@@ -46,7 +47,8 @@ const setPicIdData = () => {
     }
     return(
         <>
-
+        <div className="main ">
+        <video src ={videoBg} autoPlay loop muted className='fixed w-screen left-1/2 top-1/2 h-screen object-cover -translate-y-1/2 -translate-x-1/2 -z-10'/>
         
         <div className="bg-opacity-70 display flex-auto text-center  mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
         
@@ -99,6 +101,7 @@ const setPicIdData = () => {
             <div class="min-h-screen">
         <div className="sticky top-[100vh]"><Footer/></div>
       </div>
+   </div>
    </div>
         </>
     )
