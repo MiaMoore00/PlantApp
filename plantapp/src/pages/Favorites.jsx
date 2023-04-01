@@ -107,7 +107,6 @@ handleFavorites();
 
         
    </div>
-   </div>
   
         </>
 
