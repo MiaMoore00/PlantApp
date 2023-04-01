@@ -3,11 +3,19 @@ import SearchBar from '../Components/SearchBar';
 import { Link } from "react-router-dom";
 import Footer from '../Components/Footer';
 import Logo from '../Logo.png';
+import videoBg from "../assets/video.mp4"
+
 
 
 function Home({userId}) {
   return (
     <>
+    <div className="main ">
+  <video src ={videoBg} autoPlay loop muted className='fixed w-screen left-1/2 top-1/2 h-screen object-cover -translate-y-1/2 -translate-x-1/2 -z-10'/>
+  
+
+  
+  
  
        <div className="bg-opacity-70  text-center 0 mx-auto max-w-screen-md  rounded-lg  bg-leafgreen h-fit w-fit shadow-xl">
              <img className =' mx-auto max-h-42' src={Logo}/>
@@ -34,6 +42,9 @@ function Home({userId}) {
 
       </div>
       <Footer></Footer></div>
+      </div>
+
+    
         
     </>
   )

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Forms.css";
-
+import videoBg from "../assets/video2.mp4"
 
 
 const Login = ({setUserId}) => {
@@ -36,7 +36,8 @@ const Login = ({setUserId}) => {
   };
 
   return (
-  
+    <div className="main ">
+        <video src ={videoBg} autoPlay loop muted className='fixed w-screen left-1/2 top-1/2 h-screen object-cover -translate-y-1/2 -translate-x-1/2 -z-10'/>
     <div id="background">
       <section className="container forms">
         <div className="form login">
@@ -86,6 +87,7 @@ const Login = ({setUserId}) => {
         </div>
       </section>
     </div>
+  </div>
   );
 };
 

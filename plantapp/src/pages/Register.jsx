@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Forms.css";
+import videoBg from "../assets/video2.mp4"
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -64,6 +65,8 @@ const Register = () => {
   };
 
   return (
+    <div className="main ">
+        <video src ={videoBg} autoPlay loop muted className='fixed w-screen left-1/2 top-1/2 h-screen object-cover -translate-y-1/2 -translate-x-1/2 -z-10'/>
     <div id="background">
       <section className="container forms flex">
         <div className="form signup">
@@ -119,6 +122,7 @@ const Register = () => {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 };
