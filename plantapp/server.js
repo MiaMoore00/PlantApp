@@ -20,9 +20,10 @@ app.use(bodyParser.text({ type: "text/html" }));
 
 app.post("/api/register", async (req, res) => {
   try {
-    const { userName, email } = req.body;
+    const { username, password, email } = req.body;
     const newUser = await User.create({
-      userName,
+      username,
+      password,
       email,
     });
     res.send(newUser);
@@ -34,9 +35,9 @@ app.post("/api/register", async (req, res) => {
 
 app.post("/api/login", async (req, res) => {
   try {
-    const { userName } = req.body;
+    const { username, password } = req.body;
     const user = await User.findOne({
-      where: { userName },
+      where: { username, password },
     });
     if (user) {
       console.log(user.dataValues.id);
@@ -49,8 +50,6 @@ app.post("/api/login", async (req, res) => {
     res.status(400).json(error);
   }
 });
-// above needs to check password
-// we also don't have column for password
 // we also need to create a session.
 // look into authentication using express sessions
 

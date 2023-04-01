@@ -6,6 +6,7 @@ import "./Forms.css";
 
 const Login = ({setUserId}) => {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -16,7 +17,10 @@ const Login = ({setUserId}) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ userName: username }),
+        body: JSON.stringify({ 
+          username: username,
+          password: password
+        }),
       });
       const data = await response.json();
       if (response.ok) {
@@ -55,6 +59,8 @@ const Login = ({setUserId}) => {
                   type="password"
                   placeholder="Password"
                   className="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="form-link">
