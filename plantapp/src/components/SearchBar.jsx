@@ -1,11 +1,9 @@
 import React, {useState, useEffect, useMemo,} from "react";
-import {Card } from "reactstrap"
 
 
 export default function SearchBar({ placeholder, userId })  {
     
 const [query, setQuery] = useState("");
-const [newFav, setNewFav] = useState("");
 
 console.log(query)
 
@@ -24,7 +22,6 @@ const [data,setData] = useState()
         })
     } 
     const handleFavorites = async (plantId) => {
-        console.log("hello");
         try {
           const response = await fetch("http://localhost:3001/api/favorites", {
             method: "PUT",
@@ -55,7 +52,7 @@ const [data,setData] = useState()
               <b> ☀️Sunlight: </b> {plant.sunlight}<br />
                <b> 🧬Scientific Name: </b>{plant.scientific_name} <br />
                <b>💦 Watering: </b> {plant.watering} 
-               <button onClick={()=> handleFavorites(plant.id)}>Add to Favorites</button>
+               <button onClick={()=> handleFavorites(plant.id)} className= "bg-green-600 rounded-md text-white">Add to Favorites💚</button>
               </div></div> </div>
         
 
