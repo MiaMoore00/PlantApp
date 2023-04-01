@@ -48,21 +48,21 @@ const setPicIdData = () => {
         <>
 
         
-        <div className="bg-opacity-80 display flex-auto text-center border-solid border-4  border-orange-500 mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
+        <div className="bg-opacity-70 display flex-auto text-center  mx-auto max-w-screen-md  rounded-lg bg-leafgreen h-fit shadow-xl">
         
-        <Link to="/PlantID" ><button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+        <Link to="/PlantID" ><button className='p-2 mt-3 mx-2 bg-green-900 rounded-md text-orange-400'>
         <b>🔎 Identify Your Plant</b>
       </button>
       </Link>
       
-      <Link to="/">
-        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500 '>
+      <Link to="/Home">
+        <button className='p-2 mt-3 mx-2 bg-green-900 rounded-md text-orange-400'>
         <b> 🏠 Home </b>
       </button>
       </Link>
 
       <Link to="/Favorites">
-        <button className='p-2 mt-3 mx-2 bg-lime-700 rounded-md text-orange-500'>
+        <button className='p-2 mt-3 mx-2 bg-green-900 rounded-md text-orange-400'>
       <b>💚 Favorite Plants </b>
       </button> 
       </Link> 
