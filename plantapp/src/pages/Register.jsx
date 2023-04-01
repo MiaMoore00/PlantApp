@@ -1,44 +1,67 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Forms.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [errorVisible, setErrorVisible] = useState('hidden-message');
+
   const navigate = useNavigate();
 
-  const registerData = (e) => {
-    e.preventDefault();
-    const body = {
-      userName: username,
+  const registerData = async event => {
+    event.preventDefault();
+    await fetch("http://localhost:3001/api/register", {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json', 
+    },
+    
+    body: JSON.stringify({
+      username: username,
+      password: password,
       email: email,
-    };
-    const replacer = (key, value) => {
-      if (typeof value === "object" && value !== null) {
-        const seen = new WeakSet();
-        if (seen.has(value)) {
-          return;
-        }
-        seen.add(value);
+    })
+
+  })
+  .then((response) => response.json())
+  .then((data) => {
+      if(data.success) {
+          setErrorVisible('hidden-message');
+          navigate("/Home");
+      } else {
+          setErrorVisible('visible-message');
       }
-      return value;
-    };
-    axios
-      .post(
-        "http://localhost:3001/api/register",
-        JSON.parse(JSON.stringify(body, replacer)),
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      )
-      .then((response) => {
-        console.log(response);
-        navigate("/"); // navigate to Home Screen after successful registration
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  })
+
+
+    // const replacer = (key, value) => {
+    //   if (typeof value === "object" && value !== null) {
+    //     const seen = new WeakSet();
+    //     if (seen.has(value)) {
+    //       return;
+    //     }
+    //     seen.add(value);
+    //   }
+    //   return value;
+    // };
+    // axios
+    //   .post(
+    //     "http://localhost:3001/api/register",
+    //     JSON.parse(JSON.stringify(body, replacer)),
+    //     {
+    //       headers: { "Content-Type": "application/json" },
+    //     }
+    //   )
+    //   .then((response) => {
+    //     console.log(response);
+    //     navigate("/"); // navigate to Home Screen after successful registration
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   return (
@@ -52,38 +75,38 @@ const Register = () => {
                 <input
                   required
                   type="text"
-                  onChange={(e) => {
-                    setUsername(e.target.value);
+                  onChange={(event) => {
+                    setUsername(event.target.value);
                   }}
                   placeholder="Username"
                   className="input"
                 />
               </div>
               <div className="field input-field">
-                <input type="text" placeholder="Full Name" className="input" />
-              </div>
-              <div className="field input-field">
-                <input
-                  required
-                  type="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  placeholder="Email"
-                  className="input"
-                />
+                <input 
+                required 
+                type="email" 
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+                placeholder="Email" 
+                className="input" />
               </div>
 
               <div className="field input-field">
                 <input
                   required
                   type="password"
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
                   placeholder="Create password"
                   className="password"
                 />
               </div>
               <div className="field button-field">
-                <button>Signup</button>
+                <input type="submit" hidden />
+                <button type="submit" >Signup</button>
               </div>
             </form>
             <div className="form-link">
@@ -93,6 +116,7 @@ const Register = () => {
                   Login
                 </Link>
               </span>
+              <p><span className={errorVisible}>Invalid username or password</span></p>
             </div>
           </div>
         </div>

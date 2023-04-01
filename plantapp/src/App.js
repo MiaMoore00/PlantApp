@@ -13,7 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // add authentication that checks if the user is logged in. 
 // make sure user can't access protected pages if not logged in.
 import videoBg from "./assets/video2.mp4"
-import Footer from "./Components/Footer";
 
 
 

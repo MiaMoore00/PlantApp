@@ -65,13 +65,10 @@ return (
             
         <h1 className='text-3xl pt-2 text-[#3f6212]'>Favorite Plants!</h1>
 
-        <button onClick={handleFavorites}>show favorites</button>
-        <button onClick={plantData}>Display plant info</button>
+        
         <div className='card'>
-
-
-
-
+            <button onClick={handleFavorites}>show favorites</button>
+            {/* <button onClick={plantData}>Display plant info</button> */}
         </div>
             
             
