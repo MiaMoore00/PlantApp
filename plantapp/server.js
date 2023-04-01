@@ -4,6 +4,7 @@ const { Sequelize } = require("sequelize");
 const cors = require("cors");
 const { User } = require("./models");
 const ejs = require("ejs");
+const axios = require("axios");
 const sequelize = new Sequelize(
   "postgres://postgres@localhost:5432/plantApp_database"
 );
@@ -90,8 +91,15 @@ app.get("/api/favoritesList", async (req,res) => {
       }
     }
   );
-  console.log("Find All", userFavorites)  
-  res.json(userFavorites.dataValues.favorite);
+ 
+  const favorites = await Promise.all(userFavorites.dataValues.favorite.map(async (id) => {
+    console.log(id)
+    const response = await axios.get(`https://perenual.com/api/species/details/${id}?key=sk-ZgIb641a4c4fc440e238&q`)
+      return response.data;
+  }))
+
+console.log(favorites);
+  res.send(favorites);
 })
 
 
