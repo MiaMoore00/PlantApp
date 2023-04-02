@@ -22,22 +22,26 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/MiaMoore00/PlantApp.git">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="/src/Logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Plant_App</h3>
+<h3 align="center">BLOOM</h3>
 
   <p align="center">
-    As plant lovers, we decided to create a multifacited app that allows the user to do the following: search (by name) more information on plants, search (by image upload) more information on plants, and get a health assessment on any plant they'd like (by image upload)
+    When searching APIs to utilize for this project we discovered pretty cool Plant APIs that provided extensive information on specific plants. We all gravitated towards this as we all in our own ways love plants. We thought of how we could utilize this API and create something useful for the plant lovers out there. 
+
+Thus, Bloom was born. Bloom is an app that allows you to make your own bloom profile and with this profile, you can search different plants by name to get information about and how to care for plants. You can identify plants near you by uploading a picture to the app and it provides information on all similar plants. 
+
+You can get a health assessment on your home plants by just uploading a picture. And you can add your favorite plants to your favorites page for your reference later. Overall, bloom is for all: Plant lovers, plant newbies, and those who are just curious about the world around them.
+
+
+   <a href="https://trello.com/invite/b/rT9xgp14/ATTIb80e0e869944dc8653051157138da739D454315E/plantapp"> See our project board here (Via Trello)</a>
     <br />
     <a href="https://github.com/MiaMoore00/PlantApp.git"><strong>Explore the docs »</strong></a>
     <br />
@@ -84,7 +88,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="/src/Logo.png" alt="Logo" width="80" height="80">
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -117,7 +121,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://api.plant.id](https://api.plant.id) & [https://plants2.p.rapidapi.com](https://plants2.p.rapidapi.com)
+1. Get a free API Key at [https://api.plant.id](https://api.plant.id) & [https://perenual.com](https://perenual.com)
 2. Clone the repo
    ```sh
    git clone https://github.com/MiaMoore80/PlantApp.git
@@ -128,7 +132,11 @@ This is an example of how to list things you need to use the software and how to
    ```
 4. Create your own key on the api site
 
-
+5. make sure sequelize is running on your local hard drive. To make sure your migrations for this project are running properly make sure to run the following code:
+ ```sh
+ sequelize db:create
+ sequelize db:migrate
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -136,9 +144,29 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-<!-- don't forget screenshots -->
-_For more examples, please refer to the [Documentation](https://example.com)_
+<h2>See Below for snippets from the Bloom Site</h2>
+
+<h3>Registration Page</h3>
+<img src="/public/images/registration.jpg"></img>
+<br>
+<h3>Login Page</h3>
+<img src="/public/images/login.jpg"></img>
+<br>
+<h3>Home Page</h3>
+<img src="/public/images/home.jpg"></img>
+<br>
+<h3>Favorites Page</h3>
+<img src="/public/images/favorites.jpg"></img>
+<br>
+<h3>Plant ID Page</h3>
+<img src="/public/images/plantId1.jpg"></img>
+<img src="/public/images/plantId2.jpg"></img>
+<br>
+<h3>Plant Health Assessment Page</h3>
+<img src="/public/images/plantHealth1.jpg"></img>
+<img src="/public/images/plantHealth2.jpg"></img>
+
+<h2 href="">Click here for video demo of site</h2>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,10 +174,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [home.jsx] Home screen that gives options on navigating site. It also includes a search bar for more info on plants.
-- [PlantId.js] Upload image to get general information on your plant.
-- [PlantHealth.js] Upload image to get a full health assessment on your plant.
+- [Register.jsx] Create your user account. Once complete the site will redirect you to the Login page.
+- [Login.jsx] Login to the site with your user account. Once logged in, you will be redirected to the home page.
+- [home.jsx] Home screen that gives options on navigating site. It also includes a search bar for more info on plants you are curious about. On this page you can also add plants to your favorites.
+- [Favorites.jsx] You can view your favorites on this page.
+- [PlantId.jsx] Upload image to get general information on your plant.
+- [PlantHealth.jsx] Upload image to get a full health assessment on your plant.
 
 
 See the [open issues](https://github.com/MiaMoore80/PlantApp/issues) for a full list of proposed features (and known issues).
@@ -171,17 +201,6 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-<!-- swap out videos -->
-
-<!-- not sure how we do licensing -->
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
