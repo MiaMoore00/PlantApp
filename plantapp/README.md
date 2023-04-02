@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MiaMoore00/PlantApp.git">
-    <img src="/src/Logo.png" alt="Logo" width="80" height="80">
+    <img src="src/Logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">BLOOM</h3>
@@ -147,24 +147,24 @@ This is an example of how to list things you need to use the software and how to
 <h2>See Below for snippets from the Bloom Site</h2>
 
 <h3>Registration Page</h3>
-<img src="/public/images/registration.jpg"></img>
+<img src="public/images/registration.jpg"></img>
 <br>
 <h3>Login Page</h3>
-<img src="/public/images/login.jpg"></img>
+<img src="public/images/login.jpg"></img>
 <br>
 <h3>Home Page</h3>
-<img src="/public/images/home.jpg"></img>
+<img src="public/images/home.jpg"></img>
 <br>
 <h3>Favorites Page</h3>
-<img src="/public/images/favorites.jpg"></img>
+<img src="public/images/favorites.jpg"></img>
 <br>
 <h3>Plant ID Page</h3>
-<img src="/public/images/plantId1.jpg"></img>
-<img src="/public/images/plantId2.jpg"></img>
+<img src="public/images/plantId1.jpg"></img>
+<img src="public/images/plantId2.jpg"></img>
 <br>
 <h3>Plant Health Assessment Page</h3>
-<img src="/public/images/plantHealth1.jpg"></img>
-<img src="/public/images/plantHealth2.jpg"></img>
+<img src="public/images/plantHealth1.jpg"></img>
+<img src="public/images/plantHealth2.jpg"></img>
 
 <h2 href="">Click here for video demo of site</h2>
 
