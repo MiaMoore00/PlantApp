@@ -46,7 +46,7 @@ You can get a health assessment on your home plants by just uploading a picture.
     <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a> 
+    <a href="https://youtu.be/ltp1J1lM9YE">View Demo</a> 
     <!-- enter demo link here -->
     ·
     <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git/issues">Report Bug</a>
@@ -64,6 +64,7 @@ You can get a health assessment on your home plants by just uploading a picture.
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <img src="src/Logo.png" alt="Logo" width="80" height="80">
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -167,7 +168,7 @@ This is an example of how to list things you need to use the software and how to
 <img src="public/images/plantHealth1.jpg"></img>
 <img src="public/images/plantHealth2.jpg"></img>
 
-<h2 href="">Click here for video demo of site</h2>
+<h2 href="https://youtu.be/ltp1J1lM9YE">Click here for video demo of site</h2>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
