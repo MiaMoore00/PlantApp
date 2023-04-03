@@ -14,9 +14,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "bloom_idx5_user",
-    "password": "0D6LwyvaKFhluWp6Hl1glZibP2nEH5Wz",
-    "database": "bloom_idx5",
+    "username": "bloom_blzv_user",
+    "password": "lxqesjhcC5uWix7FDatE1wsePGTUaHTW",
+    "database": "bloom_blzv",
     "host": "dpg-cgl4eim4dad69r5pp6ug-a",
     "dialect": "mysql"
   }
