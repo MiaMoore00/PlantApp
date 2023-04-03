@@ -19,7 +19,7 @@ const PlantHealth = () => {
    };
 const setPicIdData = () => {
     const data = {
-        api_key: "Y11w9SsCfq0zF0B7PVAhVnOosNpjyjjdwpdTD5WwbazBvzY7g1",
+        api_key: "ZsEXHBhmqvwcwnW0nMwSPEC6DTIIlJUDqjup2w6SBmM1HO0Zg0",
         images: [plantFile.base64.slice(23)],
         modifiers:["similar_images","crops_fast"],
         plant_language: "en",

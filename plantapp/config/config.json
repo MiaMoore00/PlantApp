@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "bloom_idx5_user",
+    "password": "0D6LwyvaKFhluWp6Hl1glZibP2nEH5Wz",
+    "database": "bloom_idx5",
+    "host": "dpg-cgl4eim4dad69r5pp6ug-a",
     "dialect": "mysql"
   }
 }
