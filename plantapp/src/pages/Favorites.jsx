@@ -6,7 +6,8 @@ import { useMemo } from 'react';
 import videoBg from "../assets/video8.mp4"
 
 
-const Favorites = ({ userId}) => {
+const Favorites 
+= ({ userId}) => {
   const [favoritesList, setFavoritesList] = useState([]);
   useEffect(() => {
     const handleFavorites = async () => {
