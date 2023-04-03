@@ -12,7 +12,7 @@ const Favorites = ({ userId}) => {
     const handleFavorites = async () => {
 
       try {
-        const response = await fetch("http://localhost:3001/api/favoritesList", {
+        const response = await fetch("/api/favoritesList", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
