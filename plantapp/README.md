@@ -27,7 +27,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/MiaMoore00/PlantApp.git">
+  <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git">
     <img src="src/Logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -43,14 +43,15 @@ You can get a health assessment on your home plants by just uploading a picture.
 
    <a href="https://trello.com/invite/b/rT9xgp14/ATTIb80e0e869944dc8653051157138da739D454315E/plantapp"> See our project board here (Via Trello)</a>
     <br />
-    <a href="https://github.com/MiaMoore00/PlantApp.git"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/MiaMoore00/PlantApp.git">View Demo</a>
+    <a href="">View Demo</a> 
+    <!-- enter demo link here -->
     ·
-    <a href="https://github.com/MiaMoore00/PlantApp.git/issues">Report Bug</a>
+    <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git/issues">Report Bug</a>
     ·
-    <a href="https://github.com/MiaMoore00/PlantApp.git/issues">Request Feature</a>
+    <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git/issues">Request Feature</a>
   </p>
 </div>
 
@@ -88,7 +89,7 @@ You can get a health assessment on your home plants by just uploading a picture.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/src/Logo.png" alt="Logo" width="80" height="80">
+<img src="src/Logo.png" alt="Logo" width="80" height="80">
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -124,7 +125,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://api.plant.id](https://api.plant.id) & [https://perenual.com](https://perenual.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/MiaMoore80/PlantApp.git
+   git clone https://github.com/MiaMoore80/PlantApp/plantapp.git
    ```
 3. Install NPM packages
    ```sh
@@ -182,7 +183,7 @@ This is an example of how to list things you need to use the software and how to
 - [PlantHealth.jsx] Upload image to get a full health assessment on your plant.
 
 
-See the [open issues](https://github.com/MiaMoore80/PlantApp/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/MiaMoore80/PlantApp/plantapp/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -210,7 +211,7 @@ Don't forget to give the project a star! Thanks again!
 ## Contact
 
 
-Project Link: [https://github.com/MiaMoore80/PlantApp](https://github.com/MiaMoore80/PlantApp)
+Project Link: [https://github.com/MiaMoore80/PlantApp/plantapp](https://github.com/MiaMoore80/PlantApp/plantapp)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -231,15 +232,15 @@ Project Link: [https://github.com/MiaMoore80/PlantApp](https://github.com/MiaMoo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/MiaMoore80/PlantApp.svg?style=for-the-badge
-[contributors-url]: https://github.com/MiaMoore80/PlantApp/graphs/contributors
+[contributors-url]: https://github.com/MiaMoore80/PlantApp/plantapp/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/MiaMoore80/PlantApp.svg?style=for-the-badge
-[forks-url]: https://github.com/MiaMoore80/PlantApp/network/members
-[stars-shield]: https://img.shields.io/github/stars/MiaMoore80/PlantApp.svg?style=for-the-badge
-[stars-url]: https://github.com/MiaMoore80/PlantApp/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MiaMoore80/PlantApp.svg?style=for-the-badge
-[issues-url]: https://github.com/MiaMoore80/PlantApp/issues
-[license-shield]: https://img.shields.io/github/license/MiaMoore80/PlantApp.svg?style=for-the-badge
-[license-url]: https://github.com/MiaMoore80/PlantApp/blob/master/LICENSE.txt
+[forks-url]: https://github.com/MiaMoore80/PlantApp/plantapp/network/members
+[stars-shield]: https://img.shields.io/github/stars/MiaMoore80/PlantApp/plantapp.svg?style=for-the-badge
+[stars-url]: https://github.com/MiaMoore80/PlantApp/plantapp/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MiaMoore80/PlantApp/plantapp.svg?style=for-the-badge
+[issues-url]: https://github.com/MiaMoore80/PlantApp/plantapp/issues
+[license-shield]: https://img.shields.io/github/license/MiaMoore80/PlantApp/plantapp.svg?style=for-the-badge
+[license-url]: https://github.com/MiaMoore80/PlantApp/plantapp/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/[product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
