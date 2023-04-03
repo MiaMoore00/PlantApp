@@ -6,7 +6,7 @@ const { User } = require("./models");
 const ejs = require("ejs");
 const axios = require("axios");
 const sequelize = new Sequelize(
-  "postgres://bloom_idx5_user:0D6LwyvaKFhluWp6Hl1glZibP2nEH5Wz@dpg-cgl4eim4dad69r5pp6ug-a/bloom_idx5"
+  "postgres://bloom_blzv_user:lxqesjhcC5uWix7FDatE1wsePGTUaHTW@dpg-cgl5kpceoogkndmdu1eg-a/bloom_blzv"
 );
 
 const app = express();
