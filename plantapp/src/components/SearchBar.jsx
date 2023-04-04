@@ -23,7 +23,7 @@ const [data,setData] = useState()
     } 
     const handleFavorites = async (plantId) => {
         try {
-          const response = await fetch("http://localhost:3001/api/favorites", {
+          const response = await fetch("/api/favorites", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
