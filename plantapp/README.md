@@ -34,6 +34,8 @@
 <h3 align="center">BLOOM</h3>
 
   <p align="center">
+  <h2 href="https://bloom-front.onrender.com/" target="_blank">Visit our site here</h2>
+  <br>
     When searching APIs to utilize for this project we discovered pretty cool Plant APIs that provided extensive information on specific plants. We all gravitated towards this as we all in our own ways love plants. We thought of how we could utilize this API and create something useful for the plant lovers out there. 
 
 Thus, Bloom was born. Bloom is an app that allows you to make your own bloom profile and with this profile, you can search different plants by name to get information about and how to care for plants. You can identify plants near you by uploading a picture to the app and it provides information on all similar plants. 
@@ -47,7 +49,7 @@ You can get a health assessment on your home plants by just uploading a picture.
     <br />
     <br />
     <a href="https://youtu.be/ltp1J1lM9YE">View Demo</a> 
-    <!-- enter demo link here -->
+    <a href="https://github.com/destiny1210/plantappBackEnd.git">Access our backend server GitHub repo here</a> 
     ·
     <a href="https://github.com/MiaMoore00/PlantApp/plantapp.git/issues">Report Bug</a>
     ·
@@ -112,6 +114,8 @@ You can get a health assessment on your home plants by just uploading a picture.
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
+You will also need to clone our seperate repo for the backend server so you can run simultaneously with this front end repo
+<a href="https://github.com/destiny1210/plantappBackEnd.git">Access our backend server GitHub repo here</a> 
 
 ### Prerequisites
 
@@ -124,9 +128,12 @@ This is an example of how to list things you need to use the software and how to
 ### Installation
 
 1. Get a free API Key at [https://api.plant.id](https://api.plant.id) & [https://perenual.com](https://perenual.com)
-2. Clone the repo
+2. Clone the both repos in different VS code windows
    ```sh
    git clone https://github.com/MiaMoore80/PlantApp/plantapp.git
+   ```
+   ```sh
+   git clone https://github.com/destiny1210/plantappBackEnd.git
    ```
 3. Install NPM packages
    ```sh
@@ -134,11 +141,14 @@ This is an example of how to list things you need to use the software and how to
    ```
 4. Create your own key on the api site
 
-5. make sure sequelize is running on your local hard drive. To make sure your migrations for this project are running properly make sure to run the following code:
+5. make sure sequelize is running on your local hard drive (in the backend server). To make sure your migrations for this project are running properly make sure to run the following code:
  ```sh
  sequelize db:create
  sequelize db:migrate
 ```
+
+**Important note: We did start this project with backend and the front end all in one file. In order to deploy this site to render, we needed to split out our backend from our front end. So that is why the overall readme is in this repo and not the backend repo. You will also see all of our teams' historical commments throughout the entire project within this repo. 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
