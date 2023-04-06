@@ -33,7 +33,7 @@
 <h3 align="center">BLOOM</h3>
 
   <p align="center">
-  <h2 href="https://bloom-front.onrender.com/" target="_blank">Visit our site here</h2>
+   <a href="https://bloom-front.onrender.com/" target="_blank">Visit our site here </a>
   <br>
     When searching APIs to utilize for this project we discovered pretty cool Plant APIs that provided extensive information on specific plants. We all gravitated towards this as we all in our own ways love plants. We thought of how we could utilize this API and create something useful for the plant lovers out there. 
 
